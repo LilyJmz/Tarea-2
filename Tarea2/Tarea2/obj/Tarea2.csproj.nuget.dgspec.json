@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\OneDrive\\Documentos\\Semestre3\\Bases\\Tarea2\\Tarea2\\Tarea2.csproj": {}
+    "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Tarea2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\OneDrive\\Documentos\\Semestre3\\Bases\\Tarea2\\Tarea2\\Tarea2.csproj": {
+    "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Tarea2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Documentos\\Semestre3\\Bases\\Tarea2\\Tarea2\\Tarea2.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Tarea2.csproj",
         "projectName": "Tarea2",
-        "projectPath": "C:\\Users\\HP\\OneDrive\\Documentos\\Semestre3\\Bases\\Tarea2\\Tarea2\\Tarea2.csproj",
+        "projectPath": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Tarea2.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\OneDrive\\Documentos\\Semestre3\\Bases\\Tarea2\\Tarea2\\obj\\",
+        "outputPath": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
