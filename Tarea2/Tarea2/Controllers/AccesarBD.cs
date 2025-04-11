@@ -9,7 +9,7 @@ public class AccesarBD
     {
         //String de conexión a BD
         string StringConexion = "Server=25.55.61.33;" +
-            "Database=Tarea1PruebaConcepto;" +
+            "Database=Tarea2;" +
             "Trusted_Connection=True;" +
             "TrustServerCertificate=True;";
 
