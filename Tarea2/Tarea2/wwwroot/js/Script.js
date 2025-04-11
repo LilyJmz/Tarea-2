@@ -8,6 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Script.js se ha cargado correctamente");
 });
 
+//Si le da a botón login cambia de página
+document.addEventListener('DOMContentLoaded', function () {
+    try {
+        const button = document.getElementById('hacerLogin');
+        button.addEventListener('click', function () {
+            window.location.href = 'VistaUsuario.html';
+        });
+    }
+    catch {
+        return (null);
+    }
+});
+
 //Si le da a botón insertar cambia de página
 document.addEventListener('DOMContentLoaded', function () {
     try {
