@@ -36,7 +36,7 @@ app.Map("/error", appBuilder =>
     });
 });
 
-app.MapFallbackToFile("VistaUsuario.html");
+app.MapFallbackToFile("Login.html");
 
 app.Run();
 

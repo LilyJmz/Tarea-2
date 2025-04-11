@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\css\\fontsyestilos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\css\\fontsyestilos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\controllers\\accesarbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\controllers\\accesarbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,26 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\css\\fontsyestilos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\css\\fontsyestilos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\vistausuario.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -58,11 +54,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Script.js",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\Script.js",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\Script.js",
@@ -75,20 +71,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "FontsYEstilos.css",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\FontsYEstilos.css",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\FontsYEstilos.css",
               "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\FontsYEstilos.css",
               "RelativeToolTip": "Tarea2\\wwwroot\\css\\FontsYEstilos.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACkAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-04-11T23:08:40.383Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "BDController.cs",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
               "RelativeDocumentMoniker": "Tarea2\\Controllers\\BDController.cs",
@@ -101,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Empleado.cs",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Modelos\\Empleado.cs",
               "RelativeDocumentMoniker": "Tarea2\\Modelos\\Empleado.cs",
@@ -114,46 +110,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "AccesarBD.cs",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
               "RelativeDocumentMoniker": "Tarea2\\Controllers\\AccesarBD.cs",
               "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
               "RelativeToolTip": "Tarea2\\Controllers\\AccesarBD.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-11T23:05:53.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Tarea2\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\appsettings.Development.json",
-              "RelativeToolTip": "Tarea2\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-11T23:05:33.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Tarea2\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Properties\\launchSettings.json",
               "RelativeToolTip": "Tarea2\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-04-11T23:05:13.899Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\appsettings.json",
               "RelativeDocumentMoniker": "Tarea2\\appsettings.json",
@@ -166,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "InsertarEmpleado.html",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\InsertarEmpleado.html",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\InsertarEmpleado.html",
@@ -179,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "VistaUsuario.html",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\VistaUsuario.html",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\VistaUsuario.html",
@@ -192,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "Login.html",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\Login.html",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\Login.html",
@@ -205,13 +188,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Program.cs",
               "RelativeDocumentMoniker": "Tarea2\\Program.cs",
               "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Program.cs",
               "RelativeToolTip": "Tarea2\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-11T22:44:02.91Z",
               "EditorCaption": ""

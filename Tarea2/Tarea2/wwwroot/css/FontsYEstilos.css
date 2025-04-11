@@ -36,6 +36,12 @@ button {
     left: 750px;
 }
 
+#hacerLogin {
+    position: relative;
+    margin-top: 20px; /*distancia entre boton y tabla*/
+    left: 575px;
+}
+
 table{ /*Tabla general*/
     margin: auto;
     border: 1px solid black;
@@ -70,7 +76,7 @@ label {
     margin-left: 425px;
 }
 
-input[type="text"] {
+input {
     font-size: 18px;
     width: 30%;
     margin-left: 425px;
