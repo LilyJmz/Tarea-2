@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using Tarea1_PruebaDeConcepto.Modelos;
+using Tarea2.Modelos;
 
 //Esta api controller se encarga de conectar la capa usuario con la capa de acceso a BD
 //Es decir, ahora las stored procedures se pueden llamar desde la vista usuario, pero no se puede ver su contenido
 //El api es de  ASP.NET Core , y expone por medio de https solicitudes a la capa de ususario
 
-namespace Tarea1_PruebaDeConcepto.Controllers
+namespace Tarea2.Controllers
 {
     [Route("api/BDController")]
     [ApiController]

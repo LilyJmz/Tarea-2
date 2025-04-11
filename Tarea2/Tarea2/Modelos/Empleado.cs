@@ -1,4 +1,4 @@
-namespace Tarea1_PruebaDeConcepto.Modelos
+namespace Tarea2.Modelos
 {
     public class Empleado
     {
@@ -6,7 +6,8 @@ namespace Tarea1_PruebaDeConcepto.Modelos
         public string Nombre { get; set; }
         public decimal Salario { get; set; }
 
-        public Empleado() { 
+        public Empleado()
+        {
         }
 
         public Empleado(int id, string Nombre, decimal Salario)
