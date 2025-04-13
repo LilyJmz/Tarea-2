@@ -56,5 +56,50 @@ namespace Tarea2.Controllers
                 return (null);
             }
         }
+
+
+
+
+        //Un controller de tipo GET para recibir la información de la lista de Puestos
+        [HttpGet("MostrarPuestoControlador")]
+        public ActionResult<List<Puesto>> MostrarPuestos()
+        {
+            try
+            {
+                var Puestos = AccesarBD.MostrarPuestos();
+                if (Puestos.Count == 0) //No hay Puestos en la tabla
+                {
+                    return BadRequest(new { message = "La tabla se encuentra vacía" });
+                }
+                return Ok(Puestos);//El stored procedure devuelve la lista de Puestos
+            }
+            catch
+            {
+                Console.WriteLine("No hay puestos");
+                return (null);
+            }
+        }
+
+
+
+        [HttpGet("MostrarUsuarioControlador")]
+        public ActionResult<List<Usuario>> MostrarUsuarios()
+        {
+            try
+            {
+                var Usuarios = AccesarBD.MostrarUsuarios();
+                if (Usuarios.Count == 0) //No hay Usuarios en la tabla
+                {
+                    return BadRequest(new { message = "La tabla se encuentra vacía" });
+                }
+                return Ok(Usuarios);//El stored procedure devuelve la lista de Usuarios
+            }
+            catch
+            {
+                Console.WriteLine("No hay usuarios");
+                return (null);
+            }
+        }
+
     }
 }

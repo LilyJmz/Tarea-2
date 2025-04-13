@@ -112,4 +112,123 @@ public class AccesarBD
 
         return empleados.OrderBy(e => e.Nombre).ToList(); //Orden ascendente por nombre
     }
+
+
+
+
+    public static List<Puesto> MostrarPuestos()
+    {
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        // Crea una lista de Puestos vacía
+        List<Puesto> Puestos = new List<Puesto>();
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                con.Open();
+                using (SqlCommand mostrar = new SqlCommand("MostrarPuestos", con))
+                {
+                    mostrar.CommandType = CommandType.StoredProcedure;
+
+                    // Añadir el parámetro de salida para código de error
+                    SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    mostrar.Parameters.Add(outCodigoError);
+
+                    using (SqlDataReader reader = mostrar.ExecuteReader())
+                    {
+                        // Mientras haya registros en la tabla, los va almacenando como Puestos
+                        while (reader.Read())
+                        {
+                            Puestos.Add(new Puesto(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetDecimal(2)
+                            ));
+                        }
+                    }
+
+                    // Obtener el código de error 
+                    int errorCod = (int)outCodigoError.Value;
+                    if (errorCod != 0)
+                    {
+                        // Error en capa lógica
+                        Console.WriteLine("Error al mostrar Puestos: " + errorCod);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Error en capa lógica
+            Console.WriteLine("Error al mostrar Puestos");
+        }
+        return null;
+    }
+
+
+
+    public static List<Usuario> MostrarUsuarios()
+    {
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        // Crea una lista de Usuarios vacía
+        List<Usuario> Usuarios = new List<Usuario>();
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                con.Open();
+                using (SqlCommand mostrar = new SqlCommand("MostrarUsuarios", con))
+                {
+                    mostrar.CommandType = CommandType.StoredProcedure;
+
+                    // Añadir el parámetro de salida para código de error
+                    SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    mostrar.Parameters.Add(outCodigoError);
+
+                    using (SqlDataReader reader = mostrar.ExecuteReader())
+                    {
+                        // Mientras haya registros en la tabla, los va almacenando como Usuarios
+                        while (reader.Read())
+                        {
+                            Usuarios.Add(new Usuario(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2)
+                            ));
+                        }
+                    }
+
+                    // Obtener el código de error 
+                    int errorCod = (int)outCodigoError.Value;
+                    if (errorCod != 0)
+                    {
+                        // Error en capa lógica
+                        Console.WriteLine("Error al mostrar Usuarios: " + errorCod);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Error en capa lógica
+            Console.WriteLine("Error al mostrar Usuarios");
+        }
+        return null;
+    }
 }
