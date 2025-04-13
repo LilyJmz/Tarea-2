@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (letraRegex.test(inFiltro)) {
                 filtrarEmpleado(inFiltro, 1);
             } else {
-                alert("El filtro por nombre tiene solo letras y por identificacion solo números");
+                alert("El filtro por nombre tiene solo letras y el filtro por identificacion solo numeros");
                 }
         });
     }
@@ -151,7 +151,67 @@ function filtrarEmpleado(busqueda, tipo) {
             return respuesta.json();
         })
         .then(datos => {
-            // Mismo código para mostrar empleados...
+            const tbody = document.querySelector("#datosTabla");
+            tbody.innerHTML = "";
+
+            if (datos.length === 0) {
+                const trInicio = document.createElement("tr");
+                const tdNoData = document.createElement("td");
+                tdNoData.colSpan = 5;
+                tdNoData.textContent = "La tabla está vacía.";
+                trInicio.appendChild(tdNoData);
+                tbody.appendChild(trInicio);
+            } else {
+                console.log(datos);
+                datos.forEach((empleado) => {
+                    const trInicio = document.createElement("tr");
+
+                    const tdNombre = document.createElement("td");
+                    tdNombre.textContent = empleado.nombre;
+                    tdNombre.style.cursor = "pointer";
+                    tdNombre.style.color = "steelblue";
+                    tdNombre.style.textDecoration = "underline";
+
+                    tdNombre.addEventListener("click", () => {
+                        const currentBackground = window.getComputedStyle(tdNombre).backgroundColor;
+
+                        if (filaSeleccionada) {
+                            filaSeleccionada.style.backgroundColor = "#ffffff";
+                        }
+
+                        if (currentBackground === "rgb(187, 190, 191)") {
+                            tdNombre.style.backgroundColor = "#ffffff";
+                            empleadoSeleccionado = null;
+                            filaSeleccionada = null;
+                        } else {
+                            tdNombre.style.backgroundColor = "#bbbebf";
+                            empleadoSeleccionado = empleado;
+                            filaSeleccionada = tdNombre;
+                        }
+                        actualizarBotones();
+                    });
+                    trInicio.appendChild(tdNombre);
+
+                    const tdDocumento = document.createElement("td");
+                    tdDocumento.textContent = empleado.valorDocumentoIdentidad;
+                    trInicio.appendChild(tdDocumento);
+
+                    const tdPuesto = document.createElement("td");
+                    tdPuesto.textContent = empleado.puesto;
+                    trInicio.appendChild(tdPuesto);
+
+                    const tdFecha = document.createElement("td");
+                    const fecha = new Date(empleado.fechaContratacion);
+                    tdFecha.textContent = fecha.toISOString().split('T')[0];
+                    trInicio.appendChild(tdFecha);
+
+                    const tdSaldo = document.createElement("td");
+                    tdSaldo.textContent = empleado.saldoVacaciones;
+                    trInicio.appendChild(tdSaldo);
+
+                    tbody.appendChild(trInicio);
+                });
+            }
         })
         .catch(error => {
             console.log("No se muestra la tabla.");
