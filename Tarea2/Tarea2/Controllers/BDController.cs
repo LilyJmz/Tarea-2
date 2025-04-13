@@ -12,29 +12,26 @@ namespace Tarea2.Controllers
     [ApiController]
     public class BDController : ControllerBase
     {
-        //    //Un controller de tipo POST para enviar la informacion
-        //    [HttpPost("InsertarControlador")]
-        //    public ActionResult<int> InsertarEmpleado([FromBody] Empleado empleado)
-        //    {
-        //        try
-        //        {
-        //            int result = AccesarBD.InsertarEmpleado(empleado.Nombre, empleado.Salario);
-        //            if (result == 0) //El stored procedure devuelve 0 todo está bien
-        //            {
-        //                return Ok(result);
-        //            }
-        //            else
-        //            {
-        //                return BadRequest(new { message = "Error al insertar empleado", codigoError = result });
-        //                //El stored procedure encuentra un error
-        //            }
-        //        }
-        //        catch
-        //        {
-        //            return(null);
-        //        }
-        //    }
-
+        [HttpPost("InsertarControlador")]
+        public ActionResult<int> InsertarEmpleado([FromBody] Empleado empleado)
+        {
+            try
+            {
+                int result = AccesarBD.InsertarEmpleado(empleado.Puesto, empleado.ValorDocumentoIdentidad, empleado.Nombre, empleado.FechaContratacion, empleado.SaldoVacaciones, empleado.EsActivo);
+                if (result == 0) // El stored procedure devuelve 0 todo está bien
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(new { message = "Error al insertar empleado", codigoError = result });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error en servidor", exception = ex.Message });
+            }
+        }
 
 
         [AllowAnonymous]

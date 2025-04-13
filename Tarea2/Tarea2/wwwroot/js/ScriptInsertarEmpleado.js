@@ -8,43 +8,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //Si le da a botón insertar revisa el contenido de los cuadros de texto
-//document.addEventListener('DOMContentLoaded', function () {
-//    try {
-//        const button = document.getElementById('accionInsertar');
-//        button.addEventListener('click', function () {
-//        const nombre = document.getElementById('nombre').value.trim();
-//        const salarioStr = document.getElementById('salario').value.trim();
+document.addEventListener('DOMContentLoaded', function () {
+    try {
+        const button = document.getElementById('accionInsertar');
+        button.addEventListener('click', function () {
+            const nombre = document.getElementById('nombre').value.trim();
+            const docId = document.getElementById('docId').value.trim();
+            const puesto = document.getElementById('puesto').value.trim();
 
-//        //Validaciones de nombre
-//        const nameRegex = /^[a-zA-Z\s\-]+$/;
-//        if (nombre === "") {
-//            alert("No puede dejar su nombre vacío");
-//        } else if (!nameRegex.test(nombre)) {
-//            alert("No puede ingresar caracteres especiales en su nombre");
+            const nameRegex = /^[a-zA-Z\s\-]+$/;
+            const docRegex = /^\d{7,9}$/;
 
-//        //Validaciones de salario
-//        } else if (!/^\d+(\.\d{1,2})?$/.test(salarioStr)) {
-//            alert("Solo puede ingresar números y un punto decimal en su salario");
-//        }
-//        else if (salario === "") {
-//            alert("No puede dejar el salario vacío");
-//        } else {
-
-//            const salario = parseFloat(salarioStr);
-//            if (isNaN(salario)) {
-//                alert("Solo puede ingresar números y un punto decimal en su salario");
-//            } else {
-
-//                //Llama función si los campos son correctos
-//                    insertarEmpleado(nombre, salario);
-//            }
-//        }
-//        });
-//    }
-//    catch {
-//        return (null);
-//        }
-//});
+            if (nombre === "") {
+                alert("No puede dejar su nombre vacío");
+            } else if (!nameRegex.test(nombre)) {
+                alert("No puede ingresar caracteres especiales en su nombre");
+            } else if (docId === "") {
+                alert("No puede dejar su documento de identificación vacío");
+            } else if (!docRegex.test(docId)) {
+                alert("Solo puede agregar números en su documento de identificación");
+            } else if (puesto === "") {
+                alert("Debe ingresar un puesto");
+            } else {
+                const fechaContratacion = new Date().toISOString().split('T')[0];
+                insertarEmpleado(puesto, docId, nombre, fechaContratacion, 0, true);
+            }
+        });
+    }
+    catch {
+        return (null);
+        }
+});
 
 //Si le da click a regresar vuelve a la página inicial
 document.addEventListener('DOMContentLoaded', function () {
@@ -61,32 +55,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Llamar a stored procedures
-//function insertarEmpleado(nombre, salario) {
-//    fetch('https://localhost:5001/api/BDController/InsertarControlador', {
-//        method: 'POST',
-//        headers: {
-//            'Content-Type': 'application/json',
-//        },
-//        body: JSON.stringify({
-//            Nombre: nombre,
-//            Salario: salario
-//        }),
-//    })
-//        .then(respuesta => {
-//            //Si devuelve que el nombre está repetido activa una alerta
-//            if (!respuesta.ok) {
-//                throw new Error(); 
-//            }
-//            return respuesta.json();
-//        })
-//        .then(datos => {
-//            //Si todo está bien da mensaje de éxito
-//            alert("Empleado insertado exitosamente");
-//        })
-//        .catch(() => {
-//            alert("Este empleado ya ha sido registrado");
-//        });
-//}
+const insertarEmpleado = (puesto, docId, nombre, fechaContratacion, saldoVacaciones, esActivo) => {
+    fetch('https://localhost:5001/api/BDController/InsertarControlador', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            Puesto: puesto,
+            ValorDocumentoIdentidad: docId,
+            Nombre: nombre,
+            FechaContratacion: fechaContratacion,
+            SaldoVacaciones: saldoVacaciones,
+            EsActivo: esActivo
+        }),
+    })
+        .then(respuesta => {
+            if (!respuesta.ok) {
+                return respuesta.json().then(errorDetails => {
+                    // Aquí logueas el código de error y el mensaje para diagnosticar el problema
+                    console.log("Código de error:", errorDetails.codigoError);
+                    console.log("Mensaje de error:", errorDetails.message);
+                    throw new Error(`Error: ${errorDetails.message} - Código de error: ${errorDetails.codigoError}`);
+                });
+            }
+            return respuesta.json();
+        })
+        .then(datos => {
+            alert("Empleado insertado exitosamente");
+        })
+        .catch((error) => {
+            // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
+            console.error("Error al intentar registrar el empleado:", error);
+            alert(error.message);
+        });
+}
+
 
 function mostrarPuesto() {
     fetch('https://localhost:5001/api/BDController/MostrarPuestoControlador')
@@ -110,7 +114,7 @@ function mostrarPuesto() {
             } else {
                 datos.forEach(puesto => {
                     const opcion = document.createElement("option");
-                    opcion.value = puesto.id;  
+                    opcion.value = puesto.nombre;  
                         opcion.textContent = puesto.nombre;
                     select.appendChild(opcion);
                 });

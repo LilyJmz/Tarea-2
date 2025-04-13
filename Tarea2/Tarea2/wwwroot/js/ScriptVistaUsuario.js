@@ -1,5 +1,6 @@
 //Acciones en html
-
+let empleadoSeleccionado = null;
+let filaSeleccionada = null;
 //Carga la tabla cuando se corre la página
 document.addEventListener("DOMContentLoaded", function () {
     mostrarEmpleado();
@@ -63,7 +64,22 @@ function mostrarEmpleado() {
                     tdNombre.style.textDecoration = "underline";
 
                     tdNombre.addEventListener("click", () => {
-                        window.location.href = `CUDEmpleado.html?id=${empleado.id}`;
+                        const currentBackground = window.getComputedStyle(tdNombre).backgroundColor;
+
+                        if (filaSeleccionada) {
+                            filaSeleccionada.style.backgroundColor = "#ffffff"; 
+                        }
+
+                        if (currentBackground === "rgb(187, 190, 191)") {  
+                            tdNombre.style.backgroundColor = "#ffffff"; 
+                            empleadoSeleccionado = null;
+                            filaSeleccionada = null; 
+                        } else {
+                            tdNombre.style.backgroundColor = "#bbbebf"; 
+                            empleadoSeleccionado = empleado;
+                            filaSeleccionada = tdNombre; 
+                        }
+                        actualizarBotones(); 
                     });
                     trInicio.appendChild(tdNombre);
 
@@ -93,4 +109,46 @@ function mostrarEmpleado() {
             console.error(error); 
         });
 }
+
+function actualizarBotones() {
+    if (empleadoSeleccionado) {
+        document.getElementById("consultarBtn").disabled = false;
+        document.getElementById("actualizarBtn").disabled = false;
+        document.getElementById("eliminarBtn").disabled = false;
+        document.getElementById("movimientosBtn").disabled = false;
+    } else {
+        document.getElementById("consultarBtn").disabled = true;
+        document.getElementById("actualizarBtn").disabled = true;
+        document.getElementById("eliminarBtn").disabled = true;
+        document.getElementById("movimientosBtn").disabled = true;
+    }
+}
+
+
+
+
+document.getElementById("consultarBtn").addEventListener("click", () => {
+    if (empleadoSeleccionado) {
+        alert(`Consultando empleado: ${empleadoSeleccionado.nombre}`);
+    }
+});
+
+document.getElementById("actualizarBtn").addEventListener("click", () => {
+    if (empleadoSeleccionado) {
+        alert(`Actualizando empleado: ${empleadoSeleccionado.nombre}`);
+    }
+});
+
+document.getElementById("eliminarBtn").addEventListener("click", () => {
+    if (empleadoSeleccionado) {
+        alert(`Eliminando empleado: ${empleadoSeleccionado.nombre}`);
+    }
+});
+
+document.getElementById("movimientosBtn").addEventListener("click", () => {
+    if (empleadoSeleccionado) {
+        alert(`Mostrando movimientos de: ${empleadoSeleccionado.nombre}`);
+    }
+});
+
    

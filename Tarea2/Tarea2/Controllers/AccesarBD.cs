@@ -4,50 +4,57 @@ using Tarea2.Modelos;
 
 public class AccesarBD
 {
-    //public static int InsertarEmpleado(string nombre, decimal salario)
-    //{
-    //    //String de conexión a BD
-    //    string StringConexion = "Server=25.55.61.33;" +
-    //        "Database=Tarea2;" +
-    //        "Trusted_Connection=True;" +
-    //        "TrustServerCertificate=True;";
+    public static int InsertarEmpleado(string puesto, string ValorDocumentoIdentidad, string nombre, DateTime fechaContratacion, int saldoVacaciones, bool esActivo)
+    {
+        //String de conexión a BD
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
 
-    //    try
-    //    {
-    //        using (SqlConnection con = new SqlConnection(StringConexion))
-    //        {
-    //            //Abre conexión y se crea el comando insertar
-    //            con.Open();
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                //Abre conexión y se crea el comando insertar
+                con.Open();
 
-    //            using (SqlCommand insertar = new SqlCommand("InsertarEmpleado", con))
-    //            {
-    //                //Envia parámetros de entrada
-    //                insertar.CommandType = CommandType.StoredProcedure;
-    //                insertar.Parameters.Add("@inNombre", SqlDbType.VarChar, 64).Value = nombre;
-    //                insertar.Parameters.Add("@inSalario", SqlDbType.Money).Value = salario;
+                using (SqlCommand insertar = new SqlCommand("InsertarEmpleado", con))
+                {
+                    insertar.CommandType = CommandType.StoredProcedure;
 
-    //                //Recibe el código de error
-    //                SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
-    //                {
-    //                    Direction = ParameterDirection.Output
-    //                };
-    //                insertar.Parameters.Add(outCodigoError);
+                    //Envia parámetros de entrada
+                    insertar.Parameters.Add("@inPuesto", SqlDbType.VarChar, 128).Value = puesto;
+                    insertar.Parameters.Add("@inValorDocumentoIdentidad", SqlDbType.NChar, 32).Value = ValorDocumentoIdentidad;
+                    insertar.Parameters.Add("@inNombre", SqlDbType.VarChar, 128).Value = nombre;
+                    insertar.Parameters.Add("@inFechaContratacion", SqlDbType.Date).Value = fechaContratacion;
+                    insertar.Parameters.Add("@inSaldoVacaciones", SqlDbType.Int).Value = saldoVacaciones;
+                    insertar.Parameters.Add("@inEsActivo", SqlDbType.Bit).Value = esActivo;
 
-    //                //Se ejecuta el Stored procedure
-    //                insertar.ExecuteNonQuery();
 
-    //                //Devuelve el código de error
-    //                return (int)outCodigoError.Value;
-    //            }
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        //Error en capa lógica
-    //        Console.WriteLine("Error en accesar BD");
-    //        return 50005;
-    //    }
-    //}
+                    //Recibe el código de error
+                    SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    insertar.Parameters.Add(outCodigoError);
+
+                    //Se ejecuta el Stored procedure
+                    insertar.ExecuteNonQuery();
+
+                    //Devuelve el código de error
+                    return (int)outCodigoError.Value;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            //Error en capa lógica
+            Console.WriteLine($"Error al intentar conectar o ejecutar la consulta: {ex.Message}");
+            Console.WriteLine($"Detalles: {ex.StackTrace}");
+            return 50025;
+        }
+    }
 
 
     public static List<Empleado> MostrarEmpleados()
