@@ -1,4 +1,3 @@
-
 using Microsoft.Data.SqlClient;
 using System.Data;
 using Tarea2.Modelos;
@@ -82,15 +81,15 @@ public class AccesarBD
                         // Mientras haya registros en la tabla, los va almacenando como empleados
                         while (reader.Read())
                         {
-                                empleados.Add(new Empleado(
-                                    reader.GetInt32(0),
-                                    reader.GetString(1),
-                                    reader.GetString(2),                      
-                                    reader.GetString(3),
-                                    reader.GetDateTime(4).Date,
-                                    reader.GetInt32(5),                     
-                                    reader.GetBoolean(6)                      
-                                ));
+                            empleados.Add(new Empleado(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetDateTime(4).Date,
+                                reader.GetInt32(5),
+                                reader.GetBoolean(6)
+                            ));
                         }
                     }
 
@@ -170,7 +169,8 @@ public class AccesarBD
             // Error en capa lógica
             Console.WriteLine("Error al mostrar Puestos");
         }
-        return null;
+
+        return Puestos;
     }
 
 
@@ -229,6 +229,7 @@ public class AccesarBD
             // Error en capa lógica
             Console.WriteLine("Error al mostrar Usuarios");
         }
-        return null;
+
+        return Usuarios;
     }
 }

@@ -1,11 +1,22 @@
-
-
 //Acciones en html
 
 //Carga la tabla cuando se corre la página
-document.addEventListener("DOMContentLoaded", function () { 
+document.addEventListener("DOMContentLoaded", function () {
     mostrarEmpleado();
     console.log("Script.js se ha cargado correctamente");
+});
+
+//Si le da a botón login cambia de página
+document.addEventListener('DOMContentLoaded', function () {
+    try {
+        const button = document.getElementById('hacerLogin');
+        button.addEventListener('click', function () {
+            window.location.href = 'VistaUsuario.html';
+        });
+    }
+    catch {
+        return (null);
+    }
 });
 
 //Si le da a botón insertar cambia de página
@@ -20,21 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return (null);
     }
 });
-
-
-//Si le da click a regresar vuelve a la página inicial
-document.addEventListener('DOMContentLoaded', function () {
-    try {
-        const button = document.getElementById('regresarInsertarVista');
-        button.addEventListener('click', function () {
-            window.location.href = 'VistaUsuario.html';
-        });
-    }
-    catch {
-        return (null);
-    }
-});
-
 
 function mostrarEmpleado() {
     fetch('https://localhost:5001/api/BDController/MostrarControlador')
@@ -92,11 +88,9 @@ function mostrarEmpleado() {
                 });
             }
         })
-        .catch(() => {
+        .catch(error => {
             console.log("No se muestra la tabla.");
+            console.error(error); 
         });
 }
-
-
-
    

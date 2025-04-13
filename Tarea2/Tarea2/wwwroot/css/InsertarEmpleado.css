@@ -19,13 +19,6 @@ button {
         background-color: #3c5db9;
     }
 
-
-#irInsertarEmpleado {
-    position: relative;
-    margin-top: 20px; /*distancia entre boton y tabla*/
-    left: 575px;
-}
-
 #accionInsertar {
     position: absolute;
     top: 550px;
@@ -38,34 +31,6 @@ button {
     top: 550px;
     left: 800px;
     margin-bottom:150px;
-}
-
-#hacerLogin {
-    position: absolute;
-    top: 400px;
-    left: 606px;
-}
-
-table { /*Tabla general*/
-    margin: auto;
-    border: 1px solid black;
-    width: 50%;
-    border-collapse: collapse;
-}
-
-th { /*Titulos de tabla*/
-    background-color: #a5e1f5;
-}
-
-td { /*Celdas de tabla*/
-    background-color: #ffffff;
-}
-
-td, th {
-    border: 1px solid black;
-    padding: 5px;
-    height: 20px;
-    text-align: center;
 }
 
 form {
@@ -86,14 +51,16 @@ input[type="text"] {
     margin-left: 450px;
 }
 
-input[type="password"] {
-    font-size: 18px;
-    width: 30%;
-    margin-left: 450px;
-}
 
 select {
     font-size: 18px;
     width: 30%;
     margin-left: 450px;
+    color: black; 
+    background-color: white; 
+}
+
+option {
+    color: black; /* Set the text color for the options */
+    background-color: white; /* Optional: Set the background color for options */
 }

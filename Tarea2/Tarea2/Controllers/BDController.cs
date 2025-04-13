@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tarea2.Modelos;
 
@@ -36,7 +37,7 @@ namespace Tarea2.Controllers
 
 
 
-
+        [AllowAnonymous]
         //Un controller de tipo GET para recibir la información de la lista de empleados
         [HttpGet("MostrarControlador")]
         public ActionResult<List<Empleado>> MostrarEmpleados()
@@ -46,7 +47,7 @@ namespace Tarea2.Controllers
                 var empleados = AccesarBD.MostrarEmpleados();
                 if (empleados.Count == 0) //No hay empleados en la tabla
                 {
-                    return BadRequest(new { message = "La tabla se encuentra vacía"});
+                        return Ok(new { message = "La tabla está vacía", empleados = new List<Empleado>() });
                 }
                 return Ok(empleados);//El stored procedure devuelve la lista de empleados
             }
@@ -66,17 +67,17 @@ namespace Tarea2.Controllers
         {
             try
             {
-                var Puestos = AccesarBD.MostrarPuestos();
-                if (Puestos.Count == 0) //No hay Puestos en la tabla
+                var puestos = AccesarBD.MostrarPuestos();
+                if (puestos.Count == 0) 
                 {
-                    return BadRequest(new { message = "La tabla se encuentra vacía" });
+                    return Ok(new { message = "La tabla está vacía", empleados = new List<Puesto>() });
                 }
-                return Ok(Puestos);//El stored procedure devuelve la lista de Puestos
+                return Ok(puestos);
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine("No hay puestos");
-                return (null);
+                Console.WriteLine($"Error al obtener los puestos: {ex.Message}");
+                return StatusCode(500, new { message = "Error en el servidor" });
             }
         }
 

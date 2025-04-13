@@ -10,7 +10,7 @@
         {
         }
 
-        public Puesto(int id, string Nombre, decimal SlarioxHora)
+        public Puesto(int id, string Nombre, decimal SalarioxHora)
         {
             this.id = id;
             this.Nombre = Nombre;

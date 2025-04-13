@@ -19,51 +19,10 @@ button {
         background-color: #3c5db9;
     }
 
-
-#irInsertarEmpleado {
-    position: relative;
-    margin-top: 20px; /*distancia entre boton y tabla*/
-    left: 575px;
-}
-
-#accionInsertar {
-    position: absolute;
-    top: 400px;
-    left: 400px;
-}
-
-#regresarInsertarVista {
-    position: absolute;
-    top: 400px;
-    left: 750px;
-}
-
 #hacerLogin {
     position: absolute;
     top: 400px;
     left: 606px;
-}
-
-table { /*Tabla general*/
-    margin: auto;
-    border: 1px solid black;
-    width: 50%;
-    border-collapse: collapse;
-}
-
-th { /*Titulos de tabla*/
-    background-color: #a5e1f5;
-}
-
-td { /*Celdas de tabla*/
-    background-color: #ffffff;
-}
-
-td, th {
-    border: 1px solid black;
-    padding: 5px;
-    height: 20px;
-    text-align: center;
 }
 
 form {

@@ -46,6 +46,18 @@ document.addEventListener("DOMContentLoaded", function () {
 //        }
 //});
 
+//Si le da click a regresar vuelve a la página inicial
+document.addEventListener('DOMContentLoaded', function () {
+    try {
+        const button = document.getElementById('regresarInsertarVista');
+        button.addEventListener('click', function () {
+            window.location.href = 'VistaUsuario.html';
+        });
+    }
+    catch {
+        return (null);
+    }
+});
 
 
 // Llamar a stored procedures
@@ -63,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //        .then(respuesta => {
 //            //Si devuelve que el nombre está repetido activa una alerta
 //            if (!respuesta.ok) {
-//                throw new Error();
+//                throw new Error(); 
 //            }
 //            return respuesta.json();
 //        })
@@ -76,18 +88,18 @@ document.addEventListener("DOMContentLoaded", function () {
 //        });
 //}
 
-
 function mostrarPuesto() {
     fetch('https://localhost:5001/api/BDController/MostrarPuestoControlador')
         .then(respuesta => {
             if (!respuesta.ok) {
-                throw new Error();
+                throw new Error('Error en la solicitud de puestos: ' + respuesta.statusText);
             }
             return respuesta.json();
         })
         .then(datos => {
             const select = document.getElementById("puesto");
-            select.innerHTML = "";
+            select.innerHTML = "";  // Clear existing options
+            console.log(datos);
 
             if (datos.length === 0) {
                 const opcion = document.createElement("option");
@@ -98,13 +110,15 @@ function mostrarPuesto() {
             } else {
                 datos.forEach(puesto => {
                     const opcion = document.createElement("option");
-                    opcion.value = puesto.id;
-                    opcion.textContent = puesto.Nombre;
+                    opcion.value = puesto.id;  
+                        opcion.textContent = puesto.nombre;
                     select.appendChild(opcion);
                 });
             }
         })
-        .catch(() => {
-            console.log("No se muestra la tabla.");
+        .catch(error => {
+            console.log("Error al mostrar la lista de puestos:", error);
         });
 }
+
+

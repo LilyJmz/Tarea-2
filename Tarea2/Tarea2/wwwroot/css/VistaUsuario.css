@@ -24,24 +24,6 @@ button {
     left: 575px;
 }
 
-#accionInsertar {
-    position: absolute;
-    top: 400px;
-    left: 400px;
-}
-
-#regresarInsertarVista {
-    position: absolute;
-    top: 400px;
-    left: 750px;
-}
-
-#hacerLogin {
-    position: absolute;
-    top: 400px;
-    left: 606px;
-}
-
 table{ /*Tabla general*/
     margin: auto;
     border: 1px solid black;
@@ -76,14 +58,3 @@ label {
     margin-left: 450px;
 }
 
-input[type="text"]{
-    font-size: 18px;
-    width: 30%;
-    margin-left: 450px;
-}
-
-input[type="password"] {
-    font-size: 18px;
-    width: 30%;
-    margin-left: 450px;
-}
