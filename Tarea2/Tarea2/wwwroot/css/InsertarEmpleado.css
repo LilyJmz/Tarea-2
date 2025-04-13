@@ -28,14 +28,16 @@ button {
 
 #accionInsertar {
     position: absolute;
-    top: 400px;
-    left: 400px;
+    top: 550px;
+    left: 450px;
+    margin-bottom: 150px;
 }
 
 #regresarInsertarVista {
     position: absolute;
-    top: 400px;
-    left: 750px;
+    top: 550px;
+    left: 800px;
+    margin-bottom:150px;
 }
 
 #hacerLogin {
@@ -85,6 +87,12 @@ input[type="text"] {
 }
 
 input[type="password"] {
+    font-size: 18px;
+    width: 30%;
+    margin-left: 450px;
+}
+
+select {
     font-size: 18px;
     width: 30%;
     margin-left: 450px;

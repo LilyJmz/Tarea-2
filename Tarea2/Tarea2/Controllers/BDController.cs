@@ -11,30 +11,30 @@ namespace Tarea2.Controllers
     [ApiController]
     public class BDController : ControllerBase
     {
-        //Un controller de tipo POST para enviar la informacion
-        [HttpPost("InsertarControlador")]
-        public ActionResult<int> InsertarEmpleado([FromBody] Empleado empleado)
-        {
-            try
-            {
-                int result = AccesarBD.InsertarEmpleado(empleado.Nombre, empleado.Salario);
-                if (result == 0) //El stored procedure devuelve 0 todo está bien
-                {
-                    return Ok(result);
-                }
-                else
-                {
-                    return BadRequest(new { message = "Error al insertar empleado", codigoError = result });
-                    //El stored procedure encuentra un error
-                }
-            }
-            catch
-            {
-                return(null);
-            }
-        }
+        //    //Un controller de tipo POST para enviar la informacion
+        //    [HttpPost("InsertarControlador")]
+        //    public ActionResult<int> InsertarEmpleado([FromBody] Empleado empleado)
+        //    {
+        //        try
+        //        {
+        //            int result = AccesarBD.InsertarEmpleado(empleado.Nombre, empleado.Salario);
+        //            if (result == 0) //El stored procedure devuelve 0 todo está bien
+        //            {
+        //                return Ok(result);
+        //            }
+        //            else
+        //            {
+        //                return BadRequest(new { message = "Error al insertar empleado", codigoError = result });
+        //                //El stored procedure encuentra un error
+        //            }
+        //        }
+        //        catch
+        //        {
+        //            return(null);
+        //        }
+        //    }
 
-        
+
 
 
         //Un controller de tipo GET para recibir la información de la lista de empleados

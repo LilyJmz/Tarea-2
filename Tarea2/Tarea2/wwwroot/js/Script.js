@@ -35,43 +35,43 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Si le da a botón insertar revisa el contenido de los cuadros de texto
-document.addEventListener('DOMContentLoaded', function () {
-    try {
-        const button = document.getElementById('accionInsertar');
-        button.addEventListener('click', function () {
-        const nombre = document.getElementById('nombre').value.trim();
-        const salarioStr = document.getElementById('salario').value.trim();
+//document.addEventListener('DOMContentLoaded', function () {
+//    try {
+//        const button = document.getElementById('accionInsertar');
+//        button.addEventListener('click', function () {
+//        const nombre = document.getElementById('nombre').value.trim();
+//        const salarioStr = document.getElementById('salario').value.trim();
 
-        //Validaciones de nombre
-        const nameRegex = /^[a-zA-Z\s\-]+$/;
-        if (nombre === "") {
-            alert("No puede dejar su nombre vacío");
-        } else if (!nameRegex.test(nombre)) {
-            alert("No puede ingresar caracteres especiales en su nombre");
+//        //Validaciones de nombre
+//        const nameRegex = /^[a-zA-Z\s\-]+$/;
+//        if (nombre === "") {
+//            alert("No puede dejar su nombre vacío");
+//        } else if (!nameRegex.test(nombre)) {
+//            alert("No puede ingresar caracteres especiales en su nombre");
 
-        //Validaciones de salario
-        } else if (!/^\d+(\.\d{1,2})?$/.test(salarioStr)) {
-            alert("Solo puede ingresar números y un punto decimal en su salario");
-        }
-        else if (salario === "") {
-            alert("No puede dejar el salario vacío");
-        } else {
+//        //Validaciones de salario
+//        } else if (!/^\d+(\.\d{1,2})?$/.test(salarioStr)) {
+//            alert("Solo puede ingresar números y un punto decimal en su salario");
+//        }
+//        else if (salario === "") {
+//            alert("No puede dejar el salario vacío");
+//        } else {
 
-            const salario = parseFloat(salarioStr);
-            if (isNaN(salario)) {
-                alert("Solo puede ingresar números y un punto decimal en su salario");
-            } else {
+//            const salario = parseFloat(salarioStr);
+//            if (isNaN(salario)) {
+//                alert("Solo puede ingresar números y un punto decimal en su salario");
+//            } else {
 
-                //Llama función si los campos son correctos
-                    insertarEmpleado(nombre, salario);
-            }
-        }
-        });
-    }
-    catch {
-        return (null);
-        }
-});
+//                //Llama función si los campos son correctos
+//                    insertarEmpleado(nombre, salario);
+//            }
+//        }
+//        });
+//    }
+//    catch {
+//        return (null);
+//        }
+//});
 
 //Si le da click a regresar vuelve a la página inicial
 document.addEventListener('DOMContentLoaded', function () {
@@ -88,32 +88,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Llamar a stored procedures
-function insertarEmpleado(nombre, salario) {
-    fetch('https://localhost:5001/api/BDController/InsertarControlador', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            Nombre: nombre,
-            Salario: salario
-        }),
-    })
-        .then(respuesta => {
-            //Si devuelve que el nombre está repetido activa una alerta
-            if (!respuesta.ok) {
-                throw new Error(); 
-            }
-            return respuesta.json();
-        })
-        .then(datos => {
-            //Si todo está bien da mensaje de éxito
-            alert("Empleado insertado exitosamente");
-        })
-        .catch(() => {
-            alert("Este empleado ya ha sido registrado");
-        });
-}
+//function insertarEmpleado(nombre, salario) {
+//    fetch('https://localhost:5001/api/BDController/InsertarControlador', {
+//        method: 'POST',
+//        headers: {
+//            'Content-Type': 'application/json',
+//        },
+//        body: JSON.stringify({
+//            Nombre: nombre,
+//            Salario: salario
+//        }),
+//    })
+//        .then(respuesta => {
+//            //Si devuelve que el nombre está repetido activa una alerta
+//            if (!respuesta.ok) {
+//                throw new Error(); 
+//            }
+//            return respuesta.json();
+//        })
+//        .then(datos => {
+//            //Si todo está bien da mensaje de éxito
+//            alert("Empleado insertado exitosamente");
+//        })
+//        .catch(() => {
+//            alert("Este empleado ya ha sido registrado");
+//        });
+//}
 
 
 
@@ -129,30 +129,44 @@ function mostrarEmpleado() {
             const tbody = document.querySelector("#datosTabla");
             tbody.innerHTML = "";
 
-            //Si la tabla está vacía
             if (datos.length === 0) {
                 const trInicio = document.createElement("tr");
                 const tdNoData = document.createElement("td");
-                tdNoData.colSpan = 3;
+                tdNoData.colSpan = 5;
                 tdNoData.textContent = "La tabla está vacía.";
                 trInicio.appendChild(tdNoData);
                 tbody.appendChild(trInicio);
-
-            //Crea dinamicamente la tabla
             } else {
+                console.log(datos);
                 datos.forEach((empleado) => {
                     const trInicio = document.createElement("tr");
 
-                    let tdId = document.createElement("td");
-                    tdId.textContent = empleado.id;
-                    trInicio.appendChild(tdId);
-
-                    let tdNombre = document.createElement("td");
+                    const tdNombre = document.createElement("td");
                     tdNombre.textContent = empleado.nombre;
+                    tdNombre.style.cursor = "pointer";
+                    tdNombre.style.color = "steelblue";
+                    tdNombre.style.textDecoration = "underline";
+
+                    tdNombre.addEventListener("click", () => {
+                        window.location.href = `CUDEmpleado.html?id=${empleado.id}`;
+                    });
                     trInicio.appendChild(tdNombre);
 
-                    let tdSaldo = document.createElement("td");
-                    tdSaldo.textContent = empleado.salario;
+                    const tdDocumento = document.createElement("td");
+                    tdDocumento.textContent = empleado.valorDocumentoIdentidad;
+                    trInicio.appendChild(tdDocumento);
+
+                    const tdPuesto = document.createElement("td");
+                    tdPuesto.textContent = empleado.puesto;
+                    trInicio.appendChild(tdPuesto);
+
+                    const tdFecha = document.createElement("td");
+                    const fecha = new Date(empleado.fechaContratacion);
+                    tdFecha.textContent = fecha.toISOString().split('T')[0];
+                    trInicio.appendChild(tdFecha);
+
+                    const tdSaldo = document.createElement("td");
+                    tdSaldo.textContent = empleado.saldoVacaciones;
                     trInicio.appendChild(tdSaldo);
 
                     tbody.appendChild(trInicio);
