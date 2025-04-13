@@ -33,6 +33,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    try {
+        const button = document.getElementById('filtro');
+        button.addEventListener('click', function () {
+            const inFiltro = document.getElementById("inFiltro").value.trim();
+            const numRegex = /^\d+$/;
+            const letraRegex = /^[A-Za-z]+$/;
+
+            if (inFiltro === "") {
+                mostrarEmpleado();
+            } else if (numRegex.test(inFiltro)) {
+                filtrarEmpleado(inFiltro, 2);
+            } else if (letraRegex.test(inFiltro)) {
+                filtrarEmpleado(inFiltro, 1);
+            } else {
+                alert("El filtro por nombre tiene solo letras y por identificacion solo números");
+                }
+        });
+    }
+    catch {
+        return (null);
+    }
+});
+
 function mostrarEmpleado() {
     fetch('https://localhost:5001/api/BDController/MostrarControlador')
         .then(respuesta => {
@@ -109,6 +134,32 @@ function mostrarEmpleado() {
             console.error(error); 
         });
 }
+
+function filtrarEmpleado(busqueda, tipo) {
+    fetch('https://localhost:5001/api/BDController/FiltrarControlador', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            inBusqueda: busqueda,
+            inTipo: tipo
+        })
+    })
+        .then(respuesta => {
+            if (!respuesta.ok) throw new Error();
+            return respuesta.json();
+        })
+        .then(datos => {
+            // Mismo código para mostrar empleados...
+        })
+        .catch(error => {
+            console.log("No se muestra la tabla.");
+            console.error(error);
+        });
+}
+
+
 
 function actualizarBotones() {
     if (empleadoSeleccionado) {

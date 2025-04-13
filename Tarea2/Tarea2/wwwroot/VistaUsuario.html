@@ -7,21 +7,28 @@
 </head>
 <body>
     <h1>Lista de Empleados</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Documento de Identidad</th>
-                <th>Puesto</th>
-                <th>Fecha de Contratación</th>
-                <th>Saldo Vacaciones</th>
-            </tr>
-        </thead>
-        <tbody id="datosTabla">
-        </tbody>
-    </table>
+    <div id="filtrar">
+        <input id="inFiltro" type="text" placeholder="Buscar empleado">
+        <button id="filtro">Filtrar</button>
+    </div>
 
-    <button id="irInsertarEmpleado">Insertar</button>
+    <div id="tabla">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Documento de Identidad</th>
+                    <th>Puesto</th>
+                    <th>Fecha de Contratación</th>
+                    <th>Saldo Vacaciones</th>
+                </tr>
+            </thead>
+            <tbody id="datosTabla">
+            </tbody>
+        </table>
+
+        <button id="irInsertarEmpleado">Insertar</button>
+    </div>
 
     <div id="acciones">
         <button id="consultarBtn" disabled>Consultar</button>

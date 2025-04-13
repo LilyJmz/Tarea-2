@@ -56,6 +56,22 @@ namespace Tarea2.Controllers
         }
 
 
+        [AllowAnonymous]
+        [HttpPost("FiltrarControlador")]
+        public ActionResult<List<Empleado>> FiltrarEmpleados([FromBody] FiltroRequest filtro)
+        {
+            try
+            {
+                var empleados = AccesarBD.FiltrarEmpleados(filtro.inBusqueda, filtro.inTipo);
+                return Ok(empleados);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("No se muestra la tabla: " + ex.Message);
+                return StatusCode(500, "Error interno");
+            }
+        }
+
 
 
         //Un controller de tipo GET para recibir la información de la lista de Puestos

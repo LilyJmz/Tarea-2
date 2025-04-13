@@ -17,6 +17,21 @@ button {
         background-color: #3c5db9;
     }
 
+#filtrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+    margin-top: 50px;
+    gap: 10px;
+}
+input[type="text"] {
+    font-size: 18px;
+    width: 300px;
+}
+#tabla {
+    margin-top: 35px;
+}
 
 #irInsertarEmpleado {
     position: relative;
@@ -24,7 +39,7 @@ button {
     left: 575px;
 }
 
-table{ /*Tabla general*/
+table { /*Tabla general*/
     margin: auto;
     border: 1px solid black;
     width: 50%;
@@ -46,15 +61,10 @@ td, th
     text-align: center;
 }
 
-form {
-    display:flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 label {
     font-size: 25px;
     margin-top: 38px;
     margin-left: 450px;
 }
+
 

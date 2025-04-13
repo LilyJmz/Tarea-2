@@ -122,6 +122,64 @@ public class AccesarBD
 
 
 
+    public static List<Empleado> FiltrarEmpleados(string inBusqueda, int inTipo)
+    {
+        string StringConexion = "Server=25.55.61.33;Database=Tarea2;Trusted_Connection=True;TrustServerCertificate=True;";
+        List<Empleado> empleados = new List<Empleado>();
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                con.Open();
+                using (SqlCommand filtrar = new SqlCommand("FiltrarEmpleados", con))
+                {
+                    filtrar.CommandType = CommandType.StoredProcedure;
+
+                    filtrar.Parameters.AddWithValue("@inBusqueda", inBusqueda);
+                    filtrar.Parameters.AddWithValue("@inTipo", inTipo);
+
+                    SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    filtrar.Parameters.Add(outCodigoError);
+
+                    using (SqlDataReader reader = filtrar.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            empleados.Add(new Empleado(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetDateTime(4).Date,
+                                reader.GetInt32(5),
+                                reader.GetBoolean(6)
+                            ));
+                        }
+                    }
+
+                    int errorCod = (int)outCodigoError.Value;
+                    if (errorCod != 0)
+                    {
+                        Console.WriteLine("Error al filtrar empleados: " + errorCod);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error al filtrar empleados: " + ex.Message);
+        }
+
+        return empleados.OrderBy(e => e.Nombre).ToList(); ;
+    }
+
+
+
+
     public static List<Puesto> MostrarPuestos()
     {
         string StringConexion = "Server=25.55.61.33;" +
