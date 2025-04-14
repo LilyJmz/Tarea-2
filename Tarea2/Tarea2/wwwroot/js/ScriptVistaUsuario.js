@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 filtrarEmpleado(inFiltro, 1);
             } else {
                 alert("El filtro por nombre tiene solo letras y el filtro por identificacion solo numeros");
-                }
+                } 
         });
     }
     catch {
