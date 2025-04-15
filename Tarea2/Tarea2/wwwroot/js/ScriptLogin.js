@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
         const button = document.getElementById('hacerLogin');
         button.addEventListener('click', function () {
+            document.getElementById('hacerLogin').disabled = true;
             const username = document.getElementById("usuario").value.trim();
             const password = document.getElementById("contraseña").value.trim();
             mostrarUsuario(username, password);
@@ -36,9 +37,11 @@ function mostrarUsuario(username, password) {
 
             if (loginExitoso) {
                 alert("¡Login exitoso! Bienvenido " + bienvenido);
+                document.getElementById('hacerLogin').disabled = false;
                 window.location.href = 'VistaUsuario.html';
             } else {
                 alert("Usuario o contraseña incorrectos.");
+                document.getElementById('hacerLogin').disabled = false;
             }
         })
         .catch(error => {

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () {
             const inFiltro = document.getElementById("inFiltro").value.trim();
             const numRegex = /^\d+$/;
-            const letraRegex = /^[A-Za-z]+$/;
+            const letraRegex = /^[a-zA-Z\s\-]+$/;
 
             if (inFiltro === "") {
                 mostrarEmpleado();
@@ -240,6 +240,7 @@ function actualizarBotones() {
 
 document.getElementById("consultarBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
+
         alert(`Consultando empleado: ${empleadoSeleccionado.nombre}`);
     }
 });

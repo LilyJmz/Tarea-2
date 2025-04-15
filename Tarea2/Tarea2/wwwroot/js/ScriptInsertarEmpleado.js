@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
         const button = document.getElementById('accionInsertar');
         button.addEventListener('click', function () {
+            document.getElementById('accionInsertar').disabled = true;
+            document.getElementById('regresarInsertarVista').disabled = true;
             const nombre = document.getElementById('nombre').value.trim();
             const docId = document.getElementById('docId').value.trim();
             const puesto = document.getElementById('puesto').value.trim();
@@ -32,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 const fechaContratacion = new Date().toISOString().split('T')[0];
                 insertarEmpleado(puesto, docId, nombre, fechaContratacion, 0, true);
+                document.getElementById('accionInsertar').disabled = false;
+                document.getElementById('regresarInsertarVista').disabled = false;
             }
         });
     }
