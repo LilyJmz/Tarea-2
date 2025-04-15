@@ -91,7 +91,7 @@ const insertarEmpleado = (puesto, docId, nombre, fechaContratacion, saldoVacacio
         .catch((error) => {
             // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
             console.error("Error al intentar registrar el empleado:", error);
-            alert(error.message);
+            alert("Ya existe un empleado con este documento de identidad o nombre");
         });
 }
 

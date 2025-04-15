@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Actualizar Empleado</title>
+    <link rel="stylesheet" href="css/ActualizarEmpleado.css">
 </head>
 <body>
+    <h1>Actualizar Empleado</h1>
+    <form>
 
+        <label for="docIdLabel">Documento de Identidad:</label>
+        <input type="text" id="docId" required>
+
+        <label for="nombreLabel">Nombre:</label>
+        <input type="text" id="nombre">
+
+        <label for="puesto">Selecciona un Puesto:</label>
+        <select id="puesto" name="puesto">
+        </select>
+
+        <label for="fechaContratacion">Fecha de Contratación:</label>
+        <input type="text" id="fechaContratacion" readonly>
+
+        <label for="saldoVacaciones">Saldo de Vacaciones:</label>
+        <input type="text" id="saldoVacaciones" readonly>
+    </form>
+    <button id="accionInsertar">Actualizar</button>
+    <button id="regresarInsertarVista">Regresar</button>
+    <script src="js/ScriptActualizarEmpleado.js"></script>
 </body>
 </html>

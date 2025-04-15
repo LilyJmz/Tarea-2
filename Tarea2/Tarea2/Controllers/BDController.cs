@@ -33,8 +33,29 @@ namespace Tarea2.Controllers
             }
         }
 
+        [HttpPost("UpdateControlador")]
+        public ActionResult<int> UpdateEmpleado([FromBody] Empleado empleado)
+        {
+            try
+            {
+                int result = AccesarBD.UpdateEmpleado(empleado.id, empleado.Puesto, empleado.ValorDocumentoIdentidad, empleado.Nombre);
+                if (result == 0) // El stored procedure devuelve 0 todo está bien
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(new { message = "Error al Update empleado", codigoError = result });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error en servidor", exception = ex.Message });
+            }
+        }
 
-        [AllowAnonymous]
+
+            [AllowAnonymous]
         //Un controller de tipo GET para recibir la información de la lista de empleados
         [HttpGet("MostrarControlador")]
         public ActionResult<List<Empleado>> MostrarEmpleados()

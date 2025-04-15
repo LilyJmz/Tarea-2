@@ -1,11 +1,30 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="stylesheet" href="css/ListarMovimientos.css">
 </head>
 <body>
+    <h1>Lista de movimientos</h1>
+    <div id="tabla">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Nombre del tipo de movimiento</th>
+                    <th>Monto del movimiento</th>
+                    <th>Nuevo Saldo despues de aplicar el movimiento</th>
+                    <th>Nombre del usuario que registro el movimiento</th>
+                    <th>IP</th>
+                    <th>Estampa de tiempo</th>
+                </tr>
+            </thead>
+            <tbody id="datosTabla">
+            </tbody>
+        </table>
 
+        <button id="irInsertarMovimiento">Insertar</button>
+    </div>
+
+    <script src="js/ScriptListarMovimientos.js"></script>
 </body>
 </html>
