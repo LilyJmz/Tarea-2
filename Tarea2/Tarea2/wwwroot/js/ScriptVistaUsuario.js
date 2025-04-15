@@ -1,6 +1,8 @@
 //Acciones en html
 let empleadoSeleccionado = null;
 let filaSeleccionada = null;
+var usuario= JSON.parse(localStorage.getItem('usuario'));
+console.log('usuario: ', usuario);
 //Carga la tabla cuando se corre la página
 document.addEventListener("DOMContentLoaded", function () {
     mostrarEmpleado();
@@ -74,7 +76,7 @@ function mostrarEmpleado() {
                 const trInicio = document.createElement("tr");
                 const tdNoData = document.createElement("td");
                 tdNoData.colSpan = 5;
-                tdNoData.textContent = "La tabla está vacía.";
+                tdNoData.textContent = "La tabla esta vacia.";
                 trInicio.appendChild(tdNoData);
                 tbody.appendChild(trInicio);
             } else {
@@ -158,7 +160,7 @@ function filtrarEmpleado(busqueda, tipo) {
                 const trInicio = document.createElement("tr");
                 const tdNoData = document.createElement("td");
                 tdNoData.colSpan = 5;
-                tdNoData.textContent = "La tabla está vacía.";
+                tdNoData.textContent = "La tabla esta vacia.";
                 trInicio.appendChild(tdNoData);
                 tbody.appendChild(trInicio);
             } else {
@@ -240,26 +242,43 @@ function actualizarBotones() {
 
 document.getElementById("consultarBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
-
         alert(`Consultando empleado: ${empleadoSeleccionado.nombre}`);
+        localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
+        window.location.href = 'ConsultarEmpleado.html';
+
     }
 });
 
 document.getElementById("actualizarBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
         alert(`Actualizando empleado: ${empleadoSeleccionado.nombre}`);
+        localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
+        window.location.href = 'ActualizarEmpleado.html';
     }
 });
 
 document.getElementById("eliminarBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
         alert(`Eliminando empleado: ${empleadoSeleccionado.nombre}`);
+        localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
+        window.location.href = 'EliminarEmpleado.html';
     }
 });
 
-document.getElementById("movimientosBtn").addEventListener("click", () => {
+document.getElementById("listarMovimientosBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
         alert(`Mostrando movimientos de: ${empleadoSeleccionado.nombre}`);
+        localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
+        window.location.href = 'ListarMovimientos.html';
+    }
+});
+
+document.getElementById("insertarMovimientoBtn").addEventListener("click", () => {
+    if (empleadoSeleccionado) {
+        alert(`Mostrando movimientos de: ${empleadoSeleccionado.nombre}`);
+        localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
+        localStorage.setItem('usuario', JSON.stringify(usuario));
+        window.location.href = 'InsertarMovimiento.html';
     }
 });
 

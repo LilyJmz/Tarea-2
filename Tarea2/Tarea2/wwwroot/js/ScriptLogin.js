@@ -31,6 +31,7 @@ function mostrarUsuario(username, password) {
             datos.forEach(usuario => {
                 if (usuario.username === username && usuario.password === password) {
                     loginExitoso = true;
+                    localStorage.setItem('usuario', JSON.stringify(usuario));
                     bienvenido = usuario.username;
                 }
             });

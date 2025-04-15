@@ -1,0 +1,61 @@
+﻿h1 {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #577fef;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color; /*Animacion cambio color al poner el mouse encima*/
+}
+
+    button:hover {
+        background-color: #3c5db9;
+    }
+
+#filtrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+    margin-top: 50px;
+    gap: 10px;
+}
+
+#tabla {
+    margin-top: 35px;
+}
+
+#regresarConsultarVista {
+    position: relative;
+    margin-top: 20px; /*distancia entre boton y tabla*/
+    left: 575px;
+}
+
+table { /*Tabla general*/
+    margin: auto;
+    border: 1px solid black;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th { /*Titulos de tabla*/
+    background-color: #a5e1f5;
+}
+
+td { /*Celdas de tabla*/
+    background-color: #ffffff;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px;
+    height: 20px;
+    text-align: center;
+}
+
