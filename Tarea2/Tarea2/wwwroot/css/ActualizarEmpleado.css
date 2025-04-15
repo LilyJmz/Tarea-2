@@ -21,15 +21,15 @@ button {
 
 #accionInsertar {
     position: absolute;
-    top: 550px;
-    left: 450px;
-    margin-bottom: 150px;
+    top: 780px;
+    left: 425px;
+    margin-bottom: 200px;
 }
 
 #regresarInsertarVista {
     position: absolute;
-    top: 550px;
-    left: 800px;
+    top: 780px;
+    left: 775px;
     margin-bottom: 150px;
 }
 
@@ -37,6 +37,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 150px;
 }
 
 label {

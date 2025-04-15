@@ -32,11 +32,17 @@ input[type="text"] {
 #tabla {
     margin-top: 35px;
 }
+#acciones {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 50px auto 50px auto; 
+}
 
-#irInsertarEmpleado {
-    position: relative;
-    margin-top: 20px; /*distancia entre boton y tabla*/
-    left: 575px;
+.columna {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
 }
 
 table { /*Tabla general*/
