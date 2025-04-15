@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const docRegex = /^\d{7,9}$/;
 
             if (nombre === "") {
-                alert("No puede dejar su nombre vacío");
+                alert("No puede dejar su nombre vacio");
             } else if (!nameRegex.test(nombre)) {
                 alert("No puede ingresar caracteres especiales en su nombre");
             } else if (docId === "") {
