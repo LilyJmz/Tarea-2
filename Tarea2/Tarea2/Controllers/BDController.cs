@@ -54,8 +54,29 @@ namespace Tarea2.Controllers
             }
         }
 
+        [HttpPost("DeleteControlador")]
+        public ActionResult<int> DeleteEmpleado([FromBody] int id)
+        {
+            try
+            {
+                int result = AccesarBD.DeleteEmpleado(id);
+                if (result == 0)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return StatusCode(400, new { message = "Error al Delete empleado", codigoError = result });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error en servidor", exception = ex.Message });
+            }
+        }
 
-            [AllowAnonymous]
+
+        [AllowAnonymous]
         //Un controller de tipo GET para recibir la información de la lista de empleados
         [HttpGet("MostrarControlador")]
         public ActionResult<List<Empleado>> MostrarEmpleados()

@@ -3,13 +3,13 @@ let empleadoSeleccionado = null;
 let filaSeleccionada = null;
 var usuario= JSON.parse(localStorage.getItem('usuario'));
 console.log('usuario: ', usuario);
-//Carga la tabla cuando se corre la página
+//Carga la tabla cuando se corre la pagina
 document.addEventListener("DOMContentLoaded", function () {
     mostrarEmpleado();
     console.log("Script.js se ha cargado correctamente");
 });
 
-//Si le da a botón login cambia de página
+//Si le da a boton login cambia de pagina
 document.addEventListener('DOMContentLoaded', function () {
     try {
         const button = document.getElementById('hacerLogin');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-//Si le da a botón insertar cambia de página
+//Si le da a boton insertar cambia de pagina
 document.addEventListener('DOMContentLoaded', function () {
     try {
         const button = document.getElementById('irInsertarEmpleado');
@@ -228,12 +228,14 @@ function actualizarBotones() {
         document.getElementById("consultarBtn").disabled = false;
         document.getElementById("actualizarBtn").disabled = false;
         document.getElementById("eliminarBtn").disabled = false;
-        document.getElementById("movimientosBtn").disabled = false;
+        document.getElementById("listarMovimientosBtn").disabled = false;
+        document.getElementById("insertarMovimientoBtn").disabled = false;
     } else {
         document.getElementById("consultarBtn").disabled = true;
         document.getElementById("actualizarBtn").disabled = true;
         document.getElementById("eliminarBtn").disabled = true;
-        document.getElementById("movimientosBtn").disabled = true;
+        document.getElementById("listarMovimientosBtn").disabled = true;
+        document.getElementById("insertarMovimientoBtn").disabled = true;
     }
 }
 
@@ -242,7 +244,6 @@ function actualizarBotones() {
 
 document.getElementById("consultarBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
-        alert(`Consultando empleado: ${empleadoSeleccionado.nombre}`);
         localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
         window.location.href = 'ConsultarEmpleado.html';
 
@@ -251,7 +252,6 @@ document.getElementById("consultarBtn").addEventListener("click", () => {
 
 document.getElementById("actualizarBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
-        alert(`Actualizando empleado: ${empleadoSeleccionado.nombre}`);
         localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
         window.location.href = 'ActualizarEmpleado.html';
     }
@@ -259,9 +259,13 @@ document.getElementById("actualizarBtn").addEventListener("click", () => {
 
 document.getElementById("eliminarBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
-        alert(`Eliminando empleado: ${empleadoSeleccionado.nombre}`);
-        localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
-        window.location.href = 'EliminarEmpleado.html';
+        if (confirm(`Seguro que deseas eliminar al empleado: ${empleadoSeleccionado.nombre} documento de identidad ${empleadoSeleccionado.valorDocumentoIdentidad.trim() }?`)) {
+            deleteEmpleado(empleadoSeleccionado.id);
+        } else {
+
+            alert("Eliminacion cancelada.");
+        }
+        
     }
 });
 
@@ -281,5 +285,39 @@ document.getElementById("insertarMovimientoBtn").addEventListener("click", () =>
         window.location.href = 'InsertarMovimiento.html';
     }
 });
+
+
+
+// Llamar a stored procedures
+const deleteEmpleado = (id) => {
+        fetch('https://localhost:5001/api/BDController/DeleteControlador', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(id)
+        })
+        .then(respuesta => {
+            if (!respuesta.ok) {
+                return respuesta.json().then(errorDetails => {
+                    // Aqui logueas el codigo de error y el mensaje para diagnosticar el problema
+                    console.log("Codigo de error:", errorDetails.codigoError);
+                    console.log("Mensaje de error:", errorDetails.message);
+                    throw new Error(`Error: ${errorDetails.message} - Codigo de error: ${errorDetails.codigoError}`);
+                });
+            }
+            return respuesta.json();
+        })
+        .then(datos => {
+            alert("Empleado eliminado exitosamente");
+            mostrarEmpleado();
+        })
+        .catch((error) => {
+            // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
+            console.error("Error al intentar eliminar el empleado:", error);
+            alert(error.message);
+        });
+}
+
 
    
