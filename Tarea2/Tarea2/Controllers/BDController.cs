@@ -97,6 +97,32 @@ namespace Tarea2.Controllers
             }
         }
 
+        [AllowAnonymous]
+        [HttpGet("CargarControlador")]
+        public IActionResult CargarControlador()
+        {
+            try
+            {
+                int result = AccesarBD.CargarDatos();
+
+                return result switch
+                {
+                    0 => Ok(new { success = true, message = "Datos cargados exitosamente" }),
+                    1 => Ok(new { success = true, message = "Los datos ya existían" }),
+                    _ => BadRequest(new { success = false, message = $"Error al cargar datos (Código: {result})" })
+                };
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    success = false,
+                    message = "Error interno del servidor",
+                    error = ex.Message
+                });
+            }
+        }
+
 
         [AllowAnonymous]
         [HttpPost("FiltrarControlador")]

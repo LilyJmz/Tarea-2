@@ -1,4 +1,11 @@
-﻿//Si le da a botón login cambia de página
+﻿document.addEventListener("DOMContentLoaded", function () {
+    CargarDatos();
+    console.log("Los datos se han cargado correctamente");
+});
+
+
+
+//Si le da a botón login cambia de página
 document.addEventListener('DOMContentLoaded', function () {
     try {
         const button = document.getElementById('hacerLogin');
@@ -50,5 +57,20 @@ function mostrarUsuario(username, password) {
             console.error(error);
         });
 }
+async function CargarDatos() {
+    try {
+        const response = await fetch('https://localhost:5001/api/BDController/CargarControlador');
+        const result = await response.json();
 
+        if (!response.ok) {
+            throw new Error(result.message || "Error en la solicitud");
+        }
 
+        console.log(result.message);
+        alert(result.message);
+
+    } catch (error) {
+        console.error("Error:", error);
+        alert(error.message);
+    }
+}

@@ -217,6 +217,40 @@ public class AccesarBD
     }
 
 
+    public static int CargarDatos()
+    {
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        try
+        {
+            using (var con = new SqlConnection(StringConexion))
+            {
+                con.Open();
+                using (var cmd = new SqlCommand("CargarDatos", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    var outParam = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(outParam);
+
+                    cmd.ExecuteNonQuery();
+
+                    return (int)outParam.Value;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Database Error: " + ex.Message);
+            return 50005;
+        }
+    }
 
 
     public static List<Empleado> FiltrarEmpleados(string inBusqueda, int inTipo)
