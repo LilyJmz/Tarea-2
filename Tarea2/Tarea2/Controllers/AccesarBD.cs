@@ -56,6 +56,60 @@ public class AccesarBD
         }
     }
 
+
+    public static int InsertarBitacora(int idTipoEvento, string Descripcion, int idPostByUser, string PostInIp, DateTime PostTime)
+    {
+        //String de conexión a BD
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                //Abre conexión y se crea el comando insertar
+                con.Open();
+
+                using (SqlCommand insertar = new SqlCommand("InsertarBitacora", con))
+                {
+                    insertar.CommandType = CommandType.StoredProcedure;
+
+                    //Envia parámetros de entrada
+                    insertar.Parameters.Add("@inIdTipoEvento", SqlDbType.Int).Value = idTipoEvento;
+                    insertar.Parameters.Add("@inDescripcion", SqlDbType.VarChar).Value = Descripcion;
+                    insertar.Parameters.Add("@inIdPostByUser", SqlDbType.Int).Value = idPostByUser;
+                    insertar.Parameters.Add("@inPostInIp", SqlDbType.VarChar, 32).Value = PostInIp;
+                    insertar.Parameters.Add("@inPostTime", SqlDbType.DateTime).Value = PostTime;
+
+
+                    //Recibe el código de error
+                    SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    insertar.Parameters.Add(outCodigoError);
+
+                    //Se ejecuta el Stored procedure
+                    insertar.ExecuteNonQuery();
+
+                    //Devuelve el código de error
+                    return (int)outCodigoError.Value;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            //Error en capa lógica
+            Console.WriteLine($"Error al intentar conectar o ejecutar la consulta: {ex.Message}");
+            Console.WriteLine($"Detalles: {ex.StackTrace}");
+            return 50025;
+        }
+    }
+
+
+
     public static int UpdateEmpleado(int id, string puesto, string ValorDocumentoIdentidad, string nombre)
     {
         //String de conexión a BD

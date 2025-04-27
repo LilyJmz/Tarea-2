@@ -5,8 +5,8 @@ console.log('empleado: ', empleado);
 document.addEventListener("DOMContentLoaded", function () {
     mostrarPuesto();
     console.log("Script.js se ha cargado correctamente");
-    document.getElementById('docId').value = empleado.valorDocumentoIdentidad;
-    document.getElementById('nombre').value = empleado.nombre;
+    document.getElementById('docId').value = empleado.valorDocumentoIdentidad.trim();
+    document.getElementById('nombre').value = empleado.nombre.trim();
     document.getElementById('fechaContratacion').value = empleado.fechaContratacion.split('T')[0];
     document.getElementById('saldoVacaciones').value = empleado.saldoVacaciones;
 });

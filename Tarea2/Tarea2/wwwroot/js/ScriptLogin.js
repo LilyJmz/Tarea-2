@@ -1,25 +1,23 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
+    console.log("Cargando datos"); 
     CargarDatos();
-    console.log("Los datos se han cargado correctamente");
-});
+    console.log("Datos Cargados"); 
 
-
-
-//Si le da a botón login cambia de página
-document.addEventListener('DOMContentLoaded', function () {
     try {
         const button = document.getElementById('hacerLogin');
-        button.addEventListener('click', function () {
-            document.getElementById('hacerLogin').disabled = true;
-            const username = document.getElementById("usuario").value.trim();
-            const password = document.getElementById("contraseña").value.trim();
-            mostrarUsuario(username, password);
-        });
-    }
-    catch {
-        return (null);
+        if (button) {
+            button.addEventListener('click', function () {
+                this.disabled = true;
+                const username = document.getElementById("usuario").value.trim();
+                const password = document.getElementById("contraseña").value.trim();
+                mostrarUsuario(username, password);
+            });
+        }
+    } catch (error) {
+        console.error("Error setting up login button:", error);
     }
 });
+
 
 
 
@@ -57,6 +55,8 @@ function mostrarUsuario(username, password) {
             console.error(error);
         });
 }
+
+
 async function CargarDatos() {
     try {
         const response = await fetch('https://localhost:5001/api/BDController/CargarControlador');
@@ -73,4 +73,35 @@ async function CargarDatos() {
         console.error("Error:", error);
         alert(error.message);
     }
+}
+
+const insertarEmpleado = (idTipoEvento, Descripcion, idPostByUser, PostInIp, PostTime) => {
+    fetch('https://localhost:5001/api/BDController/InsertarBitacora', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            idTipoEvento = idTipoEvento;
+            Descripcion = Descripcion;
+            idPostByUser = idPostByUser;
+            PostInIp = PostInIp;
+            PostTime = PostTime;
+        }),
+    })
+        .then(respuesta => {
+            if (!respuesta.ok) {
+                return respuesta.json().then(errorDetails => {
+                    // Aquí logueas el código de error y el mensaje para diagnosticar el problema
+                    console.log("Código de error:", errorDetails.codigoError);
+                    console.log("Mensaje de error:", errorDetails.message);
+                    throw new Error(`Error: ${errorDetails.message} - Código de error: ${errorDetails.codigoError}`);
+                });
+            }
+            return respuesta.json();
+        })
+        .catch((error) => {
+            // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
+            console.error("Error al intentar registrar el evento:", error);
+        });
 }

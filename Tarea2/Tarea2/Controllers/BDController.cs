@@ -33,6 +33,29 @@ namespace Tarea2.Controllers
             }
         }
 
+
+        [HttpPost("InsertarBitacora")]
+        public ActionResult<int> InsertarBitacora([FromBody] Bitacora bitacora)
+        {
+            try
+            {
+                int result = AccesarBD.InsertarBitacora(bitacora.idTipoEvento, bitacora.Descripcion, bitacora.idPostByUser, bitacora.PostInIp, bitacora.PostTime);
+                if (result == 0) // El stored procedure devuelve 0 todo está bien
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(new { message = "Error al insertar evento", codigoError = result });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error en servidor", exception = ex.Message });
+            }
+        }
+
+
         [HttpPost("UpdateControlador")]
         public ActionResult<int> UpdateEmpleado([FromBody] Empleado empleado)
         {
