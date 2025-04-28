@@ -36,7 +36,7 @@ app.Map("/error", appBuilder =>
     });
 });
 
-app.MapFallbackToFile("Login.html");
+app.MapFallbackToFile("ListarMovimientos.html");
 
 app.Run();
 

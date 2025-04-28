@@ -1,10 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
+    <title>Lista de Movimientos</title>
     <link rel="stylesheet" href="css/ListarMovimientos.css">
 </head>
 <body>
     <h1>Lista de movimientos</h1>
+    <div id="datos">
+
+    </div>
     <div id="tabla">
         <table>
             <thead>
@@ -21,10 +25,15 @@
             <tbody id="datosTabla">
             </tbody>
         </table>
-
-        <button id="irInsertarMovimiento">Insertar</button>
     </div>
-
+    <div id="acciones">
+        <div class="columna">
+            <button id="irInsertarMovimiento">Insertar</button>
+        </div>
+        <div class="columna">
+            <button id="regresarMovimientosVista">Regresar</button>
+        </div>
+    </div>
     <script src="js/ScriptListarMovimientos.js"></script>
 </body>
 </html>

@@ -1,3 +1,0 @@
-C:\Users\HP\OneDrive\Documentos\GitHub\Tarea-2\Tarea2\Tarea2\wwwroot\css\EliminarEmpleado.css
-C:\Users\HP\OneDrive\Documentos\GitHub\Tarea-2\Tarea2\Tarea2\wwwroot\EliminarEmpleado.html
-C:\Users\HP\OneDrive\Documentos\GitHub\Tarea-2\Tarea2\Tarea2\wwwroot\js\ScriptEliminarEmpleado.js

@@ -1,6 +1,7 @@
 ﻿var empleado = JSON.parse(localStorage.getItem('empleado'));
 console.log('empleado: ', empleado);
-
+var usuario = JSON.parse(localStorage.getItem('usuario'));
+console.log('usuario: ', usuario);
 function listarMovimiento() {
     fetch('https://localhost:5001/api/BDController/(AnnadirStoredProcedure)', empleado.id)
         .then(respuesta => {
@@ -63,3 +64,24 @@ function listarMovimiento() {
             console.error(error);
         });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    try {
+        const button = document.getElementById('regresarMovimientosVista');
+        button.addEventListener('click', function () {
+            window.location.href = 'VistaUsuario.html';
+        });
+    }
+    catch {
+        return (null);
+    }
+});
+
+document.getElementById("insertarMovimientoBtn").addEventListener("click", () => {
+    if (empleado) {
+        alert(`Mostrando movimientos de: ${empleado.nombre}`);
+        localStorage.setItem('empleado', empleado);
+        localStorage.setItem('usuario', usuario);
+        window.location.href = 'InsertarMovimiento.html';
+    }
+});

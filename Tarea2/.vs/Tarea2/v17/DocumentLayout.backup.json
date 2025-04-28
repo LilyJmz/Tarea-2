@@ -1,37 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\",
+  "WorkspaceRootPath": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\css\\vistausuario.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\css\\vistausuario.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\vistausuario.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\vistausuario.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptlogin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptlogin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\css\\insertarempleado.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\css\\insertarempleado.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\actualizarempleado.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\actualizarempleado.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\css\\actualizarempleado.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\css\\actualizarempleado.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptvistausuario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptvistausuario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\controllers\\bdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\controllers\\bdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\controllers\\bdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\controllers\\accesarbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptvistausuario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptvistausuario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\actualizarempleado.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\actualizarempleado.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\vistausuario.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\vistausuario.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\controllers\\accesarbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\controllers\\accesarbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -45,38 +41,42 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InsertarEmpleado.css",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\InsertarEmpleado.css",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\InsertarEmpleado.css",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\InsertarEmpleado.css",
-              "RelativeToolTip": "Tarea2\\wwwroot\\css\\InsertarEmpleado.css",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-15T05:02:17.92Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VistaUsuario.css",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\VistaUsuario.css",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\VistaUsuario.css",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\VistaUsuario.css",
-              "RelativeToolTip": "Tarea2\\wwwroot\\css\\VistaUsuario.css",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-15T04:58:11.312Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Program.cs",
+              "RelativeDocumentMoniker": "Tarea2\\Program.cs",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Program.cs*",
+              "RelativeToolTip": "Tarea2\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T17:03:41.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ScriptLogin.js",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptLogin.js",
+              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptLogin.js",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptLogin.js*",
+              "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptLogin.js*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-27T16:51:16.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "VistaUsuario.html",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\VistaUsuario.html",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\VistaUsuario.html",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\VistaUsuario.html",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\VistaUsuario.html",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\VistaUsuario.html",
               "RelativeToolTip": "Tarea2\\wwwroot\\VistaUsuario.html",
               "ViewState": "AgIAABsAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
@@ -86,64 +86,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ActualizarEmpleado.css",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\ActualizarEmpleado.css",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\ActualizarEmpleado.css",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\ActualizarEmpleado.css",
-              "RelativeToolTip": "Tarea2\\wwwroot\\css\\ActualizarEmpleado.css",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-15T04:52:37.01Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "ActualizarEmpleado.html",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\ActualizarEmpleado.html",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\ActualizarEmpleado.html",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\ActualizarEmpleado.html",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\ActualizarEmpleado.html",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\ActualizarEmpleado.html",
               "RelativeToolTip": "Tarea2\\wwwroot\\ActualizarEmpleado.html",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-04-15T04:52:05.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "ScriptVistaUsuario.js",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
               "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
-              "ViewState": "AgIAAB4BAAAAAAAAAAAAwCMBAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAmwCMBAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-15T03:33:32.011Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "AccesarBD.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
               "RelativeDocumentMoniker": "Tarea2\\Controllers\\AccesarBD.cs",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
               "RelativeToolTip": "Tarea2\\Controllers\\AccesarBD.cs",
               "ViewState": "AgIAAIsAAAAAAAAAAAAIwHEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T01:56:45.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T01:56:45.357Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "BDController.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
               "RelativeDocumentMoniker": "Tarea2\\Controllers\\BDController.cs",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
               "RelativeToolTip": "Tarea2\\Controllers\\BDController.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAAwEsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T01:53:48.318Z",
               "EditorCaption": ""
