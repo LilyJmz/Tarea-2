@@ -34,6 +34,26 @@ namespace Tarea2.Controllers
             }
         }
 
+        [HttpPost("InsertarMovimientosControlador")]
+        public ActionResult<int> InsertarMovimiento([FromBody] Movimiento movimiento)
+        {
+            try
+            {
+                int result = AccesarBD.InsertarMovimiento(movimiento.idEmpleado, movimiento.idTipoMovimiento, movimiento.fecha, movimiento.monto, movimiento.nuevoSaldo, movimiento.idPostByUser, movimiento.postInIp, movimiento.postTime);
+                if (result == 0) // El stored procedure devuelve 0 todo está bien
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(new { message = "Error al insertar movimiento", codigoError = result });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error en servidor", exception = ex.Message });
+            }
+        }
 
         [HttpPost("ContarLoginsFallidos")]
         public ActionResult<LoginFallidosResponse> ContarLoginsFallidos([FromBody] LoginReq request)
@@ -202,26 +222,26 @@ namespace Tarea2.Controllers
             }
         }
 
-
-        //[AllowAnonymous]
-        //[HttpGet("MostrarMovimientosControlador")]
-        //public ActionResult<List<Movimientos>> MostrarMovimientos()
-        //{
-        //    try
-        //    {
-        //        var empleados = AccesarBD.MostrarEmpleados();
-        //        if (empleados.Count == 0) //No hay empleados en la tabla
-        //        {
-        //            return Ok(new { message = "La tabla está vacía", empleados = new List<Movimientos>() });
-        //        }
-        //        return Ok(empleados);//El stored procedure devuelve la lista de empleados
-        //    }
-        //    catch
-        //    {
-        //        Console.WriteLine("No se muestra la tabla");
-        //        return (null);
-        //    }
-        //}
+        [AllowAnonymous]
+        //Un controller de tipo GET para recibir la información de la lista de movimientos
+        [HttpGet("MostrarMovimientosControlador")]
+        public ActionResult<List<Movimiento>> MostrarMovimientos()
+        {
+            try
+            {
+                var movimientos = AccesarBD.MostrarMovimientos();
+                if (movimientos.Count == 0) //No hay empleados en la tabla
+                {
+                    return Ok(new { message = "La tabla está vacía", empleados = new List<Movimiento>() });
+                }
+                return Ok(movimientos);//El stored procedure devuelve la lista de empleados
+            }
+            catch
+            {
+                Console.WriteLine("No se muestra la tabla");
+                return (null);
+            }
+        }
 
         [AllowAnonymous]
         [HttpGet("CargarControlador")]
@@ -309,5 +329,28 @@ namespace Tarea2.Controllers
             }
         }
 
+
+        [AllowAnonymous]
+        //Un controller de tipo GET para recibir la información de la lista de empleados
+        [HttpGet("MostrarTiposMovimientosControlador")]
+        public ActionResult<List<TipoMovimiento>> MostrarTiposMovimientos()
+        {
+            try
+            {
+                var tipoMovimiento = AccesarBD.MostrarTiposMovimientos();
+                if (tipoMovimiento.Count == 0) //No hay empleados en la tabla
+                {
+                    return Ok(new { message = "La tabla está vacía", empleados = new List<TipoMovimiento>() });
+                }
+                return Ok(tipoMovimiento);//El stored procedure devuelve la lista de empleados
+            }
+            catch
+            {
+                Console.WriteLine("No se muestra la tabla");
+                return (null);
+            }
+        }
+
     }
 }
+

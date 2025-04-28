@@ -2,13 +2,19 @@
 console.log('empleado: ', empleado);
 var usuario = JSON.parse(localStorage.getItem('usuario'));
 console.log('usuario: ', usuario);
-function listarMovimiento() {
+
+document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("idEmpleado").innerHTML = empleado.id;
     document.getElementById("nombre").innerHTML = empleado.nombre;
     document.getElementById("saldoVacaciones").innerHTML = empleado.saldoVacaciones;
 
-    fetch('https://localhost:5001/api/BDController/MostrarMovimientos', empleado.id)
+    listarMovimientos();
+    console.log("Script.js se ha cargado correctamente");
+});
+
+function listarMovimiento() {
+    fetch('https://localhost:5001/api/BDController/MostrarMovimientosControlador', empleado.id)
         .then(respuesta => {
             if (!respuesta.ok) {
                 throw new Error();
@@ -37,7 +43,7 @@ function listarMovimiento() {
                     trInicio.appendChild(fecha)
 
                     const tdNombre = document.createElement("td");
-                    tdDocumento.textContent = movimiento.nombre;
+                    tdDocumento.textContent = movimiento.id; //Añadir el nombre al storedProcedure comparando con tiposMovimientos
                     trInicio.appendChild(tdNombre);
 
                     const tdMonto = document.createElement("td");
