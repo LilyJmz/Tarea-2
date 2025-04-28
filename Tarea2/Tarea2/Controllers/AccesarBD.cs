@@ -56,6 +56,58 @@ public class AccesarBD
         }
     }
 
+    public static int InsertarMovimiento(int empleadoId, int idMovimiento, DateTime fechaMovimiento, int monto, int nuevoSaldo, string usuario, string ip, DateTime hora)
+    {
+        //String de conexión a BD
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                //Abre conexión y se crea el comando insertar
+                con.Open();
+
+                using (SqlCommand insertar = new SqlCommand("InsertarMovimiento", con))
+                {
+                    insertar.CommandType = CommandType.StoredProcedure;
+
+                    //Envia parámetros de entrada
+                    insertar.Parameters.Add("@inIdEmpleado", SqlDbType.Int).Value = empleadoId;
+                    insertar.Parameters.Add("@inIdTipoMovimiento", SqlDbType.Int).Value = idMovimiento;
+                    insertar.Parameters.Add("@inFecha", SqlDbType.DateTime).Value = fechaMovimiento;
+                    insertar.Parameters.Add("@inMonto", SqlDbType.Int).Value = monto;
+                    insertar.Parameters.Add("@inNuevoSaldo", SqlDbType.Int).Value = nuevoSaldo;
+                    insertar.Parameters.Add("@inIdPostByUser", SqlDbType.VarChar, 128).Value = usuario;
+                    insertar.Parameters.Add("@inPostInIp", SqlDbType.VarChar, 128).Value = ip;
+                    insertar.Parameters.Add("@inPostTime", SqlDbType.Time).Value = hora;
+
+                    //Recibe el código de error
+                    SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    insertar.Parameters.Add(outCodigoError);
+
+                    //Se ejecuta el Stored procedure
+                    insertar.ExecuteNonQuery();
+
+                    //Devuelve el código de error
+                    return (int)outCodigoError.Value;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            //Error en capa lógica
+            Console.WriteLine($"Error al intentar conectar o ejecutar la consulta: {ex.Message}");
+            Console.WriteLine($"Detalles: {ex.StackTrace}");
+            return 50025;
+        }
+    }
 
     public static int ContarLoginsFallidos(
     string username,
@@ -408,6 +460,69 @@ public class AccesarBD
         return empleados.OrderBy(e => e.Nombre).ToList(); //Orden ascendente por nombre
     }
 
+    public static List<Movimiento> MostrarMovimientos()
+    {
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        // Crea una lista de empleados vacía
+        List<Movimiento> movimientos = new List<Movimiento>();
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                con.Open();
+                using (SqlCommand mostrar = new SqlCommand("MostrarMovimientos", con))
+                {
+                    mostrar.CommandType = CommandType.StoredProcedure;
+
+                    // Añadir el parámetro de salida para código de error
+                    SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    mostrar.Parameters.Add(outCodigoError);
+
+                    using (SqlDataReader reader = mostrar.ExecuteReader())
+                    {
+                        // Mientras haya registros en la tabla, los va almacenando como empleados
+                        while (reader.Read())
+                        {
+                            movimientos.Add(new Movimiento(
+                                reader.GetInt32(0),
+                                reader.GetInt32(1),
+                                reader.GetInt32(2),
+                                reader.GetDateTime(3).Date,
+                                reader.GetInt32(4),
+                                reader.GetInt32(5),
+                                reader.GetString(6),
+                                reader.GetString(7),
+                                reader.GetDateTime(8).Date
+                            ));
+                        }
+                    }
+
+                    // Obtener el código de error 
+                    int errorCod = (int)outCodigoError.Value;
+                    if (errorCod != 0)
+                    {
+                        // Error en capa lógica
+                        Console.WriteLine("Error al mostrar empleados: " + errorCod);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Error en capa lógica
+            Console.WriteLine("Error al mostrar empleados");
+        }
+
+        return movimientos.OrderBy(m => m.id).ToList(); //Orden ascendente por nombre
+    }
 
     public static int CargarDatos()
     {
@@ -619,5 +734,63 @@ public class AccesarBD
         }
 
         return Usuarios;
+    }
+
+    public static List<TipoMovimiento> MostrarTiposMovimientos()
+    {
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        // Crea una lista de empleados vacía
+        List<TipoMovimiento> tipoMovimientos = new List<TipoMovimiento>();
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                con.Open();
+                using (SqlCommand mostrar = new SqlCommand("MostrarTiposMovimientos", con))
+                {
+                    mostrar.CommandType = CommandType.StoredProcedure;
+
+                    // Añadir el parámetro de salida para código de error
+                    SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    mostrar.Parameters.Add(outCodigoError);
+
+                    using (SqlDataReader reader = mostrar.ExecuteReader())
+                    {
+                        // Mientras haya registros en la tabla, los va almacenando como empleados
+                        while (reader.Read())
+                        {
+                            tipoMovimientos.Add(new TipoMovimiento(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2)
+                            ));
+                        }
+                    }
+
+                    // Obtener el código de error 
+                    int errorCod = (int)outCodigoError.Value;
+                    if (errorCod != 0)
+                    {
+                        // Error en capa lógica
+                        Console.WriteLine("Error al mostrar empleados: " + errorCod);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Error en capa lógica
+            Console.WriteLine("Error al mostrar empleados");
+        }
+
+        return tipoMovimientos.OrderBy(tM => tM.nombre).ToList(); //Orden ascendente por nombre
     }
 }

@@ -5,6 +5,11 @@ var usuario = JSON.parse(localStorage.getItem('usuario'));
 console.log('usuario: ', usuario);
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById("idEmpleado").innerHTML = empleado.id;
+    document.getElementById("nombre").innerHTML = empleado.nombre;
+    document.getElementById("saldoVacaciones").innerHTML = empleado.saldoVacaciones;
+
     mostrarMovimientos();
     console.log("Script.js se ha cargado correctamente");
 });
@@ -96,7 +101,7 @@ const insertarMovimiento = (empleadoId, idMovimiento, fechaMovimiento, monto, nu
 
 
 function mostrarMovimientos() {
-    fetch('https://localhost:5001/api/BDController/MostrarMovimientosControlador')
+    fetch('https://localhost:5001/api/BDController/MostrarTiposMovimientosControlador')
         .then(respuesta => {
             if (!respuesta.ok) {
                 throw new Error('Error en la solicitud de movientos: ' + respuesta.statusText);

@@ -1,47 +1,45 @@
 ﻿namespace Tarea2.Modelos
 {
-    public class Movimientos
+    public class Movimiento
     {
         public int id { get; set; }
-        public idEm
-        public string Puesto { get; set; }
-        public string ValorDocumentoIdentidad { get; set; }
-        public string Nombre { get; set; }
-        public DateTime FechaContratacion { get; set; }
-        public int SaldoVacaciones { get; set; }
-        public bool EsActivo { get; set; }
+        public int idEmpleado { get; set; }
+        public int idTipoMovimiento { get; set; }
+        public DateTime fecha { get; set; }
+        public int monto { get; set; }
+        public int nuevoSaldo { get; set; }
+        public string idPostByUser { get; set; }
+        public string postInIp { get; set; }
+        public DateTime postTime { get; set; }
 
-        public Empleado()
+
+        public Movimiento()
         {
         }
 
-        public Empleado(string Puesto, string valorDocumentoIdentidad, string nombre, DateTime fechaContratacion, int saldoVacaciones, bool esActivo)
+        public Movimiento(int id, int idEmpleado, int idTipoMovimiento, DateTime fecha, int monto, int nuevoSaldo, string idPostByUser, string postInIp, DateTime postTime)
         {
-            this.Puesto = Puesto;
-            this.ValorDocumentoIdentidad = valorDocumentoIdentidad;
-            this.Nombre = nombre;
-            this.FechaContratacion = fechaContratacion;
-            this.SaldoVacaciones = saldoVacaciones;
-            this.EsActivo = esActivo;
+            this.id = idEmpleado;
+            this.idEmpleado = idEmpleado;
+            this.idTipoMovimiento = idTipoMovimiento;
+            this.fecha = fecha;
+            this.monto = monto;
+            this.nuevoSaldo = nuevoSaldo;
+            this.idPostByUser = idPostByUser;
+            this.postInIp = postInIp;
+            this.postTime = postTime;
         }
 
-        public Empleado(int id, string Puesto, string valorDocumentoIdentidad, string nombre, DateTime fechaContratacion, int saldoVacaciones, bool esActivo)
+        public Movimiento(int idEmpleado, int idTipoMovimiento, DateTime fecha, int monto, int nuevoSaldo, string idPostByUser, string postInIp, DateTime postTime)
         {
-            this.id = id;
-            this.Puesto = Puesto;
-            this.ValorDocumentoIdentidad = valorDocumentoIdentidad;
-            this.Nombre = nombre;
-            this.FechaContratacion = fechaContratacion;
-            this.SaldoVacaciones = saldoVacaciones;
-            this.EsActivo = esActivo;
-        }
-
-        public Empleado(int id, string Puesto, string valorDocumentoIdentidad, string nombre)
-        {
-            this.id = id;
-            this.Puesto = Puesto;
-            this.ValorDocumentoIdentidad = valorDocumentoIdentidad;
-            this.Nombre = nombre;
+            this.idEmpleado = idEmpleado;
+            this.idTipoMovimiento = idTipoMovimiento;
+            this.fecha = fecha;
+            this.monto = monto;
+            this.nuevoSaldo = nuevoSaldo;
+            this.idPostByUser = idPostByUser;
+            this.postInIp = postInIp;
+            this.postTime = postTime;
         }
     }
 }
