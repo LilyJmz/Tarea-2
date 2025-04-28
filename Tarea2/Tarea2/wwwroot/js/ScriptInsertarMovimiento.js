@@ -3,6 +3,7 @@ var empleado = JSON.parse(localStorage.getItem('empleado'));
 console.log('empleado: ', empleado);
 var usuario = JSON.parse(localStorage.getItem('usuario'));
 console.log('usuario: ', usuario);
+let NombreMovimiento;
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -91,9 +92,11 @@ const insertarMovimiento = (empleadoId, idMovimiento, fechaMovimiento, monto, nu
             return respuesta.json();
         })
         .then(datos => {
+            insertarBitacora(14, `${empleado.docId} ${empleado.nombre}  ${nuevoSaldo} ${NombreMovimiento} ${monto}`, parseInt(usuario.id), "25.55.61.33", new Date())
             alert("Movimiento insertado exitosamente");
         })
         .catch((error) => {
+            insertarBitacora(13, `Intento de insertar movimiento ${empleado.docId} ${empleado.nombre}  ${nuevoSaldo} ${NombreMovimiento} ${monto}`, parseInt(usuario.id), "25.55.61.33", new Date())
             // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
             console.error("Error al intentar registrar el movimiento:", error);
         });
@@ -115,7 +118,7 @@ function mostrarMovimientos() {
 
             if (datos.length === 0) {
                 const opcion = document.createElement("option");
-                opcion.textContent = "No hay puestos disponibles";
+                opcion.textContent = "No hay movimientos disponibles";
                 opcion.disabled = true;
                 opcion.selected = true;
                 select.appendChild(opcion);
@@ -124,6 +127,7 @@ function mostrarMovimientos() {
                     const opcion = document.createElement("option");
                     opcion.value = movimiento;
                     opcion.textContent = movimiento.nombre;
+                    NombreMovimiento = movimiento.nombre;
                     select.appendChild(opcion);
                 });
             }
@@ -162,3 +166,4 @@ const insertarBitacora = (idTipoEvento, Descripcion, idPostByUser, PostInIp, Pos
             console.error("Error al intentar registrar el evento:", error);
         });
 }
+

@@ -96,35 +96,5 @@ document.getElementById("irInsertarMovimiento").addEventListener("click", () => 
     }
 });
 
-const insertarBitacora = (idTipoEvento, Descripcion, idPostByUser, PostInIp, PostTime) => {
-    fetch('https://localhost:5001/api/BDController/InsertarBitacora', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            idTipoEvento: idTipoEvento,
-            Descripcion: Descripcion,
-            idPostByUser: idPostByUser,
-            PostInIp: PostInIp,
-            PostTime: PostTime.toISOString().split('.')[0] + "Z"
-        }),
-    })
-        .then(respuesta => {
-            if (!respuesta.ok) {
-                return respuesta.json().then(errorDetails => {
-                    // Aquí logueas el código de error y el mensaje para diagnosticar el problema
-                    console.log("Código de error:", errorDetails.codigoError);
-                    console.log("Mensaje de error:", errorDetails.message);
-                    throw new Error(`Error: ${errorDetails.message} - Código de error: ${errorDetails.codigoError}`);
-                });
-            }
-            return respuesta.json();
-        })
-        .catch((error) => {
-            // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
-            console.error("Error al intentar registrar el evento:", error);
-        });
-}
 
 
