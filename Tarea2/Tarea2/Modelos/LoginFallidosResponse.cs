@@ -6,4 +6,5 @@
         public int FueUsuario { get; set; }
         public int CodigoError { get; set; }
     }
+
 }

@@ -53,26 +53,17 @@ namespace Tarea2.Controllers
                     out codigoError
                 );
 
-                if (codigoError == 0) // Todo está bien
+                // Siempre devolvemos 200 OK, aunque haya error controlado
+                return Ok(new LoginFallidosResponse
                 {
-                    return Ok(new LoginFallidosResponse
-                    {
-                        Conteo = conteo,
-                        FueUsuario = fueUsuario,
-                        CodigoError = codigoError
-                    });
-                }
-                else
-                {
-                    return BadRequest(new
-                    {
-                        message = "Error al contar logins fallidos",
-                        codigoError = codigoError
-                    });
-                }
+                    Conteo = conteo,
+                    FueUsuario = fueUsuario,
+                    CodigoError = codigoError
+                });
             }
             catch (Exception ex)
             {
+                // Aquí sí error grave de servidor (excepción)
                 return StatusCode(500, new
                 {
                     message = "Error en servidor",
@@ -80,6 +71,7 @@ namespace Tarea2.Controllers
                 });
             }
         }
+
 
 
         [HttpPost("VerificarDeshabilitado")]
@@ -209,25 +201,27 @@ namespace Tarea2.Controllers
                 return (null);
             }
         }
-        [AllowAnonymous]
-        [HttpGet("MostrarMovimientosControlador")]
-        public ActionResult<List<Movimientos>> MostrarMovimientos()
-        {
-            try
-            {
-                var empleados = AccesarBD.MostrarEmpleados();
-                if (empleados.Count == 0) //No hay empleados en la tabla
-                {
-                    return Ok(new { message = "La tabla está vacía", empleados = new List<Movimientos>() });
-                }
-                return Ok(empleados);//El stored procedure devuelve la lista de empleados
-            }
-            catch
-            {
-                Console.WriteLine("No se muestra la tabla");
-                return (null);
-            }
-        }
+
+
+        //[AllowAnonymous]
+        //[HttpGet("MostrarMovimientosControlador")]
+        //public ActionResult<List<Movimientos>> MostrarMovimientos()
+        //{
+        //    try
+        //    {
+        //        var empleados = AccesarBD.MostrarEmpleados();
+        //        if (empleados.Count == 0) //No hay empleados en la tabla
+        //        {
+        //            return Ok(new { message = "La tabla está vacía", empleados = new List<Movimientos>() });
+        //        }
+        //        return Ok(empleados);//El stored procedure devuelve la lista de empleados
+        //    }
+        //    catch
+        //    {
+        //        Console.WriteLine("No se muestra la tabla");
+        //        return (null);
+        //    }
+        //}
 
         [AllowAnonymous]
         [HttpGet("CargarControlador")]

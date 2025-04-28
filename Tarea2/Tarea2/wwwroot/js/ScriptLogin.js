@@ -20,72 +20,72 @@
 
 
 
+async function mostrarUsuario(username, password) {
+    try {
+        const respuesta = await fetch('https://localhost:5001/api/BDController/MostrarUsuarioControlador');
 
-function mostrarUsuario(username, password) {
-    fetch('https://localhost:5001/api/BDController/MostrarUsuarioControlador')
-        .then(respuesta => {
-            if (!respuesta.ok) {
-                throw new Error("Error al obtener usuarios.");
-            }
-            return respuesta.json();
-        })
-        .then(datos => {
-            let loginExitoso = false;
-            let bienvenido;
-            let idU;
-            let cuenta;
-            let esUsuario;
+        if (!respuesta.ok) {
+            throw new Error("Error al obtener usuarios.");
+        }
 
-            datos.forEach(usuario => {
-                if (usuario.username === username) {
-                    idU = usuario.id;
-                }
-            }); 
-            
+        const datos = await respuesta.json();
 
-            datos.forEach(usuario => {
-                if (usuario.username === username && usuario.password === password) {
+        let loginExitoso = false;
+        let usuarioEncontrado = null;
+
+        for (const usuario of datos) {
+            if (usuario.username === username) {
+                usuarioEncontrado = usuario;
+
+                if (usuario.password === password) {
                     loginExitoso = true;
-                    localStorage.setItem('usuario', JSON.stringify(usuario));
-                    bienvenido = usuario.username;
-                    idU = usuario.id;
-                    const contar = await contarLoginsFallidos(username, password, "25.55.61.33");
-                    cuenta = contar.conteo;
-                    esUsuario = contar.fueUsuario;
                 }
-            }); 
-            
 
-            
-
-            if (loginExitoso) {
-                const resultado = await verificarDeshabilitado(bienvenido);
-                if (resultado.deshabilitado) {
-                    console.log("El usuario está temporalmente deshabilitado");
-                    // Mostrar mensaje al usuario
-                    alert("Tu cuenta está temporalmente deshabilitada por demasiados intentos fallidos. Intenta nuevamente más tarde.");
-                } else {
-                    insertarBitacora(1, "", parseInt(idU), "25.55.61.33", new Date())
-                    alert("¡Login exitoso! Bienvenido " + bienvenido);
-                    document.getElementById('hacerLogin').disabled = false;
-                    window.location.href = 'VistaUsuario.html';
-                }
-            } else {
-                let numError = 50002;
-                if (esUsuario) {
-                    numError = 50001;
-                    insertarBitacora(2, `Intento ${cuenta} en los últimos 20 minutos numero de error ${numError}`, 7, "25.55.61.33", new Date())
-                }
-                insertarBitacora(2, `Intento ${cuenta} en los últimos 20 minutos numero de error ${numError}`, parseInt(idU) , "25.55.61.33", new Date())
-                alert("Usuario o contraseña incorrectos.");
-                document.getElementById('hacerLogin').disabled = false;
+                break; // Ya encontró el username, no sigue buscando
             }
-        })
-        .catch(error => {
-            console.log("No hay usuarios registrados.");
-            console.error(error);
-        });
+        }
+
+        // Si encontró el usuario, hacer el conteo de logins fallidos
+        let cuenta = 0;
+        let esUsuario = 0;
+        if (usuarioEncontrado) {
+            const contar = await contarLoginsFallidos(username, password, "25.55.61.33");
+            cuenta = contar.conteo;
+            esUsuario = contar.fueUsuario;
+        }
+
+        if (loginExitoso) {
+            localStorage.setItem('usuario', JSON.stringify(usuarioEncontrado));
+
+            const resultado = await verificarDeshabilitado(usuarioEncontrado.username);
+            if (resultado.deshabilitado) {
+                console.log("El usuario está temporalmente deshabilitado");
+                alert("Tu cuenta está temporalmente deshabilitada por demasiados intentos fallidos. Intenta nuevamente más tarde.");
+            } else {
+                await insertarBitacora(1, "", parseInt(usuarioEncontrado.id), "25.55.61.33", new Date());
+                alert("¡Login exitoso! Bienvenido " + usuarioEncontrado.username);
+                document.getElementById('hacerLogin').disabled = false;
+                window.location.href = 'VistaUsuario.html';
+            }
+        } else {
+            // Login fallido
+            if (usuarioEncontrado) {
+                await insertarBitacora(2, `Intento ${cuenta} en los últimos 30 minutos, código de error 50002`, usuarioEncontrado.id, "25.55.61.33", new Date());
+                alert("Contraseña incorrecta.");
+            } else {
+                await insertarBitacora(2, `Intento fallido en los últimos 30 minutos, código de error 50001`, 7, "25.55.61.33", new Date());
+                alert("Usuario incorrecto.");
+            }
+            document.getElementById('hacerLogin').disabled = false;
+        }
+
+    } catch (error) {
+        console.error("Error en login:", error);
+        alert("Error al intentar iniciar sesión: " + error.message);
+    }
 }
+
+
 
 
 async function CargarDatos() {
@@ -135,42 +135,35 @@ const insertarBitacora = (idTipoEvento, Descripcion, idPostByUser, PostInIp, Pos
             console.error("Error al intentar registrar el evento:", error);
         });
 }
-const contarLoginsFallidos = async (username, password, ipAddress) => {
+async function contarLoginsFallidos(username, password, ipAddress) {
     try {
         const response = await fetch('https://localhost:5001/api/BDController/ContarLoginsFallidos', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 Username: username,
                 Password: password,
                 IPAddress: ipAddress
-            }),
+            })
         });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error("Error en la API:", errorData.message);
-            throw new Error(errorData.message || "Error al verificar logins fallidos");
-        }
 
         const data = await response.json();
 
-        return {
-            conteo: data.conteo,       
-            fueUsuario: data.fueUsuario 
-        };
+        if (!response.ok || data.codigoError !== 0) {
+            console.error('Error de la API:', data);
+            throw new Error(JSON.stringify(data));
+        }
 
+        return data; // Devuelve el objeto { Conteo, FueUsuario, CodigoError }
     } catch (error) {
-        console.error("Error en la solicitud:", error);
-        
-        return {
-            conteo: 0,
-            fueUsuario: 0
-        };
+        console.error('Error en la solicitud:', error);
+        throw error;
     }
-};
+}
+
+
 
 const verificarDeshabilitado = async (username) => {
     try {
@@ -194,7 +187,7 @@ const verificarDeshabilitado = async (username) => {
         }
 
         const data = await response.json();
-
+        console.log(data);
         return {
             deshabilitado: data.deshabilitado,
             codigoError: data.codigoError || 0

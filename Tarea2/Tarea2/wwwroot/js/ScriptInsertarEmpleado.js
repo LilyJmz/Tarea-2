@@ -1,6 +1,11 @@
 ﻿//Acciones en html
-var usuario = JSON.parse(localStorage.getItem('usuario')); 
-console.log(usuario);
+var usuario = JSON.parse(localStorage.getItem('usuario'));
+if (!usuario) {
+    console.log("Usuario no encontrado");
+    // Puedes redirigir o manejar el error adecuadamente
+} else {
+    console.log(usuario);
+}
 
 //Carga la tabla cuando se corre la página
 document.addEventListener("DOMContentLoaded", function () {
