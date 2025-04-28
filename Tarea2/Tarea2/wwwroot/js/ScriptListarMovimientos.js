@@ -2,8 +2,10 @@
 console.log('empleado: ', empleado);
 var usuario = JSON.parse(localStorage.getItem('usuario'));
 console.log('usuario: ', usuario);
+
+
 function listarMovimiento() {
-    fetch('https://localhost:5001/api/BDController/(AnnadirStoredProcedure)', empleado.id)
+    fetch('https://localhost:5001/api/BDController/MostrarMovimientosControlador', empleado.id)
         .then(respuesta => {
             if (!respuesta.ok) {
                 throw new Error();
@@ -23,6 +25,11 @@ function listarMovimiento() {
                 tbody.appendChild(trInicio);
             } else {
                 console.log(datos);
+
+                document.getElementById("idEmpleado").innerHTML = empleado.id;
+                document.getElementById("nombre").innerHTML = empleado.nombre;
+                document.getElementById("saldoVacaciones").innerHTML = empleado.saldoVacaciones;
+
                 datos.forEach((movimiento) => {
                     const trInicio = document.createElement("tr");
 
@@ -56,6 +63,7 @@ function listarMovimiento() {
                     trInicio.appendChild(tdFechaHora);
 
                     tbody.appendChild(trInicio);
+
                 });
             }
         })

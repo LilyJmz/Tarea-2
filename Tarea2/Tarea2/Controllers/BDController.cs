@@ -97,6 +97,26 @@ namespace Tarea2.Controllers
             }
         }
 
+        [AllowAnonymous]
+        //Un controller de tipo GET para recibir la información de la lista de empleados
+        [HttpGet("MostrarMovimientosControlador")]
+        public ActionResult<List<Movimiento>> MostrarMovimientos()
+        {
+            try
+            {
+                var movimientos = AccesarBD.MostrarMovimientos();
+                if (movimientos.Count == 0) //No hay empleados en la tabla
+                {
+                    return Ok(new { message = "La tabla está vacía", empleados = new List<Movimiento>() });
+                }
+                return Ok(movimientos);//El stored procedure devuelve la lista de empleados
+            }
+            catch
+            {
+                Console.WriteLine("No se muestra la tabla");
+                return (null);
+            }
+        }
 
         [AllowAnonymous]
         [HttpPost("FiltrarControlador")]

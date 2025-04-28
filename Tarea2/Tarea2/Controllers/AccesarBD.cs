@@ -216,6 +216,69 @@ public class AccesarBD
         return empleados.OrderBy(e => e.Nombre).ToList(); //Orden ascendente por nombre
     }
 
+    public static List<Movimiento> MostrarMovimientos()
+    {
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        // Crea una lista de empleados vacía
+        List<Movimiento> movimientos = new List<Movimiento>();
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                con.Open();
+                using (SqlCommand mostrar = new SqlCommand("MostrarMovimientos", con))
+                {
+                    mostrar.CommandType = CommandType.StoredProcedure;
+
+                    // Añadir el parámetro de salida para código de error
+                    SqlParameter outCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    mostrar.Parameters.Add(outCodigoError);
+
+                    using (SqlDataReader reader = mostrar.ExecuteReader())
+                    {
+                        // Mientras haya registros en la tabla, los va almacenando como empleados
+                        while (reader.Read())
+                        {
+                            movimientos.Add(new Movimiento(
+                                reader.GetInt32(0),
+                                reader.GetInt32(1),
+                                reader.GetInt32(2),
+                                reader.GetDateTime(3).Date,
+                                reader.GetInt32(4),
+                                reader.GetInt32(5),
+                                reader.GetString(6),
+                                reader.GetString(7),
+                                reader.GetDateTime(8).Date
+                            ));
+                        }
+                    }
+
+                    // Obtener el código de error 
+                    int errorCod = (int)outCodigoError.Value;
+                    if (errorCod != 0)
+                    {
+                        // Error en capa lógica
+                        Console.WriteLine("Error al mostrar empleados: " + errorCod);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Error en capa lógica
+            Console.WriteLine("Error al mostrar empleados");
+        }
+
+        return movimientos.OrderBy(m => m.id).ToList(); //Orden ascendente por nombre
+    }
 
 
 

@@ -3,24 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\vistausuario.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\vistausuario.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptlistarmovimientos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptlistarmovimientos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\controllers\\bdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\controllers\\bdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\controllers\\accesarbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\controllers\\accesarbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\modelos\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\modelos\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\modelos\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\modelos\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\listarmovimientos.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\listarmovimientos.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptinsertarempleado.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptinsertarempleado.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptinsertarmovimiento.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptinsertarmovimiento.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptvistausuario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptvistausuario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\vistausuario.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\vistausuario.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\css\\insertarmovimiento.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\css\\insertarmovimiento.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptlogin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptlogin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptlistarmovimientos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptlistarmovimientos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\listarmovimientos.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\listarmovimientos.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\insertarmovimiento.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -35,18 +63,6 @@
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\css\\vistausuario.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\css\\insertarmovimiento.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\css\\insertarmovimiento.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptinsertarempleado.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptinsertarempleado.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptinsertarmovimiento.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptinsertarmovimiento.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\insertarempleado.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\insertarempleado.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -57,14 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\controllers\\bdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\controllers\\bdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\controllers\\accesarbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\controllers\\accesarbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\andres\\documents\\github\\tarea-2\\tarea2\\tarea2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,41 +90,145 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Empleado.cs",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Modelos\\Empleado.cs",
+              "RelativeDocumentMoniker": "Tarea2\\Modelos\\Empleado.cs",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Modelos\\Empleado.cs",
+              "RelativeToolTip": "Tarea2\\Modelos\\Empleado.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T04:27:45.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Movimiento.cs",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Modelos\\Movimiento.cs",
+              "RelativeDocumentMoniker": "Tarea2\\Modelos\\Movimiento.cs",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Modelos\\Movimiento.cs",
+              "RelativeToolTip": "Tarea2\\Modelos\\Movimiento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T04:27:24.088Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "VistaUsuario.css",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\VistaUsuario.css",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\VistaUsuario.css",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\VistaUsuario.css",
-              "RelativeToolTip": "Tarea2\\wwwroot\\css\\VistaUsuario.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-27T20:38:03.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ScriptListarMovimientos.js",
               "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptListarMovimientos.js",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptListarMovimientos.js",
               "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptListarMovimientos.js",
               "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptListarMovimientos.js",
-              "ViewState": "AgIAADUAAAAAAAAAAAAQwAMAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwDAAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-27T20:37:48.184Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ScriptVistaUsuario.js",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
+              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
+              "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-15T03:33:32.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VistaUsuario.html",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\VistaUsuario.html",
+              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\VistaUsuario.html",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\VistaUsuario.html",
+              "RelativeToolTip": "Tarea2\\wwwroot\\VistaUsuario.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-15T04:57:38.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ScriptInsertarMovimiento.js",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
+              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
+              "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAqwHYAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-27T22:35:13.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BDController.cs",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
+              "RelativeDocumentMoniker": "Tarea2\\Controllers\\BDController.cs",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
+              "RelativeToolTip": "Tarea2\\Controllers\\BDController.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T01:53:48.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AccesarBD.cs",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
+              "RelativeDocumentMoniker": "Tarea2\\Controllers\\AccesarBD.cs",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
+              "RelativeToolTip": "Tarea2\\Controllers\\AccesarBD.cs",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAlwBcBAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T01:56:45.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ListarMovimientos.html",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\ListarMovimientos.html",
+              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\ListarMovimientos.html",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\ListarMovimientos.html",
+              "RelativeToolTip": "Tarea2\\wwwroot\\ListarMovimientos.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-27T20:36:32.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "InsertarMovimiento.css",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\InsertarMovimiento.css",
+              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\InsertarMovimiento.css",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\InsertarMovimiento.css",
+              "RelativeToolTip": "Tarea2\\wwwroot\\css\\InsertarMovimiento.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-27T20:42:32.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ScriptLogin.js",
               "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptLogin.js",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptLogin.js",
@@ -129,111 +241,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ScriptVistaUsuario.js",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
-              "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptVistaUsuario.js",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAQwAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-15T03:33:32.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VistaUsuario.html",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\VistaUsuario.html",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\VistaUsuario.html",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\VistaUsuario.html",
-              "RelativeToolTip": "Tarea2\\wwwroot\\VistaUsuario.html",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACoAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-04-15T04:57:38.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ListarMovimientos.css",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\ListarMovimientos.css",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\ListarMovimientos.css",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\ListarMovimientos.css",
-              "RelativeToolTip": "Tarea2\\wwwroot\\css\\ListarMovimientos.css",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-27T20:42:12.654Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "InsertarMovimiento.css",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\InsertarMovimiento.css",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\InsertarMovimiento.css",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\InsertarMovimiento.css",
-              "RelativeToolTip": "Tarea2\\wwwroot\\css\\InsertarMovimiento.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-27T20:42:32.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ListarMovimientos.html",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\ListarMovimientos.html",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\ListarMovimientos.html",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\ListarMovimientos.html",
-              "RelativeToolTip": "Tarea2\\wwwroot\\ListarMovimientos.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-04-27T20:36:32.515Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "InsertarMovimiento.html",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\InsertarMovimiento.html",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\InsertarMovimiento.html",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\InsertarMovimiento.html",
-              "RelativeToolTip": "Tarea2\\wwwroot\\InsertarMovimiento.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-04-27T22:30:34.538Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "ScriptInsertarEmpleado.js",
               "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarEmpleado.js",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptInsertarEmpleado.js",
               "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarEmpleado.js",
               "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptInsertarEmpleado.js",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAACIAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAQwCIAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-27T22:35:15.596Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ScriptInsertarMovimiento.js",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
-              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
-              "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAFAAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-27T22:35:13.735Z",
+              "DocumentIndex": 12,
+              "Title": "InsertarMovimiento.html",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\InsertarMovimiento.html",
+              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\InsertarMovimiento.html",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\InsertarMovimiento.html",
+              "RelativeToolTip": "Tarea2\\wwwroot\\InsertarMovimiento.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-27T22:30:34.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
+              "Title": "ListarMovimientos.css",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\ListarMovimientos.css",
+              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\ListarMovimientos.css",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\ListarMovimientos.css",
+              "RelativeToolTip": "Tarea2\\wwwroot\\css\\ListarMovimientos.css",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-27T20:42:12.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "VistaUsuario.css",
+              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\VistaUsuario.css",
+              "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\VistaUsuario.css",
+              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\VistaUsuario.css",
+              "RelativeToolTip": "Tarea2\\wwwroot\\css\\VistaUsuario.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-27T20:38:03.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "InsertarEmpleado.html",
               "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\InsertarEmpleado.html",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\InsertarEmpleado.html",
@@ -241,12 +300,11 @@
               "RelativeToolTip": "Tarea2\\wwwroot\\InsertarEmpleado.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-04-27T20:36:30.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T20:36:30.42Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "InsertarEmpleado.css",
               "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\InsertarEmpleado.css",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\InsertarEmpleado.css",
@@ -254,12 +312,11 @@
               "RelativeToolTip": "Tarea2\\wwwroot\\css\\InsertarEmpleado.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-27T20:42:34.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T20:42:34.443Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "Login.css",
               "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\css\\Login.css",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\css\\Login.css",
@@ -267,12 +324,11 @@
               "RelativeToolTip": "Tarea2\\wwwroot\\css\\Login.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-27T20:42:25.838Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T20:42:25.838Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Program.cs",
               "RelativeDocumentMoniker": "Tarea2\\Program.cs",
@@ -280,12 +336,11 @@
               "RelativeToolTip": "Tarea2\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T17:03:41.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T17:03:41.25Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "ActualizarEmpleado.html",
               "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\ActualizarEmpleado.html",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\ActualizarEmpleado.html",
@@ -293,34 +348,7 @@
               "RelativeToolTip": "Tarea2\\wwwroot\\ActualizarEmpleado.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-04-15T04:52:05.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AccesarBD.cs",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
-              "RelativeDocumentMoniker": "Tarea2\\Controllers\\AccesarBD.cs",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
-              "RelativeToolTip": "Tarea2\\Controllers\\AccesarBD.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAQwHEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T01:56:45.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "BDController.cs",
-              "DocumentMoniker": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
-              "RelativeDocumentMoniker": "Tarea2\\Controllers\\BDController.cs",
-              "ToolTip": "C:\\Users\\Andres\\Documents\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
-              "RelativeToolTip": "Tarea2\\Controllers\\BDController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T01:53:48.318Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T04:52:05.285Z"
             }
           ]
         }
