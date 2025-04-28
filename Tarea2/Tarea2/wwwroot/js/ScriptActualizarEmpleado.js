@@ -1,5 +1,6 @@
 ﻿//Acciones en html
 var empleado = JSON.parse(localStorage.getItem('empleado'));
+var usuario = JSON.parse(localStorage.getItem('usuario')); 
 console.log('empleado: ', empleado);
 //Carga la tabla cuando se corre la página
 document.addEventListener("DOMContentLoaded", function () {
@@ -89,12 +90,16 @@ const updateEmpleado = (id, puesto, docId, nombre) => {
             return respuesta.json();
         })
         .then(datos => {
+            insertarBitacora(8, `${empleado.puesto} ${empleado.valorDocumentoIdentidad.trim()}  ${empleado.nombre} ${puesto} ${docId.trim()}  ${nombre} ${empleado.saldoVacaciones}`, parseInt(usuario.id), "25.55.61.33", new Date())
             alert("Empleado actualizado exitosamente");
         })
         .catch((error) => {
             // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
             console.error("Error al intentar actualizar el empleado:", error);
-            alert(error.message);
+            insertarBitacora(7, `Empleado con ValorDocumentoIdentidad ya existe en actualizacion ${empleado.puesto} ${empleado.valorDocumentoIdentidad.trim()}  ${empleado.nombre} ${puesto} ${docId.trim()}  ${nombre} ${empleado.saldoVacaciones}`, parseInt(usuario.id), "25.55.61.33", new Date())
+            insertarBitacora(7, `Empleado con mismo nombre ya existe en actualización ${empleado.puesto} ${empleado.valorDocumentoIdentidad.trim()}  ${empleado.nombre} ${puesto} ${docId.trim()}  ${nombre} ${empleado.saldoVacaciones}`, parseInt(usuario.id), "25.55.61.33", new Date())
+            alert("Ya existe otro empleado con esa identificacion o nombre");
+            
         });
 }
 
@@ -109,7 +114,7 @@ function mostrarPuesto() {
         })
         .then(datos => {
             const select = document.getElementById("puesto");
-            select.innerHTML = "";  // Clear existing options
+            select.innerHTML = "";  
             console.log(datos);
 
             if (datos.length === 0) {
@@ -139,3 +144,34 @@ function mostrarPuesto() {
         });
 }
 
+
+const insertarBitacora = (idTipoEvento, Descripcion, idPostByUser, PostInIp, PostTime) => {
+    fetch('https://localhost:5001/api/BDController/InsertarBitacora', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            idTipoEvento: idTipoEvento,
+            Descripcion: Descripcion,
+            idPostByUser: idPostByUser,
+            PostInIp: PostInIp,
+            PostTime: PostTime.toISOString().split('.')[0] + "Z"
+        }),
+    })
+        .then(respuesta => {
+            if (!respuesta.ok) {
+                return respuesta.json().then(errorDetails => {
+                    // Aquí logueas el código de error y el mensaje para diagnosticar el problema
+                    console.log("Código de error:", errorDetails.codigoError);
+                    console.log("Mensaje de error:", errorDetails.message);
+                    throw new Error(`Error: ${errorDetails.message} - Código de error: ${errorDetails.codigoError}`);
+                });
+            }
+            return respuesta.json();
+        })
+        .catch((error) => {
+            // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
+            console.error("Error al intentar registrar el evento:", error);
+        });
+}

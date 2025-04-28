@@ -1,7 +1,8 @@
 //Acciones en html
 let empleadoSeleccionado = null;
 let filaSeleccionada = null;
-var usuario= JSON.parse(localStorage.getItem('usuario'));
+var usuario = JSON.parse(localStorage.getItem('usuario'));
+localStorage.setItem('usuario', JSON.stringify(usuario));
 console.log('usuario: ', usuario);
 //Carga la tabla cuando se corre la pagina
 document.addEventListener("DOMContentLoaded", function () {
@@ -12,22 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
 //Si le da a boton login cambia de pagina
 document.addEventListener('DOMContentLoaded', function () {
     try {
-        const button = document.getElementById('hacerLogin');
+        const button = document.getElementById('logout');
         button.addEventListener('click', function () {
-            window.location.href = 'VistaUsuario.html';
-        });
-    }
-    catch {
-        return (null);
-    }
-});
-
-//Si le da a boton insertar cambia de pagina
-document.addEventListener('DOMContentLoaded', function () {
-    try {
-        const button = document.getElementById('irInsertarEmpleado');
-        button.addEventListener('click', function () {
-            window.location.href = 'InsertarEmpleado.html';
+            insertarBitacora(4, "", parseInt(usuario.id), "25.55.61.33", new Date())
+            window.location.href = 'Login.html';
         });
     }
     catch {
@@ -48,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 mostrarEmpleado();
             } else if (numRegex.test(inFiltro)) {
                 filtrarEmpleado(inFiltro, 2);
+                insertarBitacora(12, `${inFiltro}`, parseInt(usuario.id), "25.55.61.33", new Date())
             } else if (letraRegex.test(inFiltro)) {
+                insertarBitacora(11, `${inFiltro}`, parseInt(usuario.id), "25.55.61.33", new Date())
                 filtrarEmpleado(inFiltro, 1);
             } else {
                 alert("El filtro por nombre tiene solo letras y el filtro por identificacion solo numeros");
@@ -250,19 +241,26 @@ document.getElementById("consultarBtn").addEventListener("click", () => {
     }
 });
 
+document.getElementById("irInsertarEmpleado").addEventListener("click", () => {
+        localStorage.setItem('usuario', JSON.stringify(usuario));
+        window.location.href = 'InsertarEmpleado.html';
+});
+
 document.getElementById("actualizarBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
         localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
+        localStorage.setItem('usuario', JSON.stringify(usuario));
         window.location.href = 'ActualizarEmpleado.html';
     }
 });
 
 document.getElementById("eliminarBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
-        if (confirm(`Seguro que deseas eliminar al empleado: ${empleadoSeleccionado.nombre} documento de identidad ${empleadoSeleccionado.valorDocumentoIdentidad.trim() }?`)) {
+        if (confirm(`Seguro que deseas eliminar al empleado: ${empleadoSeleccionado.nombre} documento de identidad ${empleadoSeleccionado.valorDocumentoIdentidad.trim()}?`)) {
+            insertarBitacora(10, `${empleadoSeleccionado.valorDocumentoIdentidad.trim()}  ${empleadoSeleccionado.nombre} ${empleadoSeleccionado.puesto} ${empleadoSeleccionado.saldoVacaciones}`, parseInt(usuario.id), "25.55.61.33", new Date())
             deleteEmpleado(empleadoSeleccionado.id);
         } else {
-
+            insertarBitacora(9, `${empleadoSeleccionado.valorDocumentoIdentidad.trim()}  ${empleadoSeleccionado.nombre} ${empleadoSeleccionado.puesto} ${empleadoSeleccionado.saldoVacaciones}`, parseInt(usuario.id), "25.55.61.33", new Date())
             alert("Eliminacion cancelada.");
         }
         
@@ -271,7 +269,6 @@ document.getElementById("eliminarBtn").addEventListener("click", () => {
 
 document.getElementById("listarMovimientosBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
-        alert(`Mostrando movimientos de: ${empleadoSeleccionado.nombre}`);
         localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
         window.location.href = 'ListarMovimientos.html';
     }
@@ -279,7 +276,6 @@ document.getElementById("listarMovimientosBtn").addEventListener("click", () => 
 
 document.getElementById("insertarMovimientoBtn").addEventListener("click", () => {
     if (empleadoSeleccionado) {
-        alert(`Mostrando movimientos de: ${empleadoSeleccionado.nombre}`);
         localStorage.setItem('empleado', JSON.stringify(empleadoSeleccionado));
         localStorage.setItem('usuario', JSON.stringify(usuario));
         window.location.href = 'InsertarMovimiento.html';
@@ -316,6 +312,37 @@ const deleteEmpleado = (id) => {
             // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
             console.error("Error al intentar eliminar el empleado:", error);
             alert(error.message);
+        });
+}
+
+const insertarBitacora = (idTipoEvento, Descripcion, idPostByUser, PostInIp, PostTime) => {
+    fetch('https://localhost:5001/api/BDController/InsertarBitacora', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            idTipoEvento: idTipoEvento,
+            Descripcion: Descripcion,
+            idPostByUser: idPostByUser,
+            PostInIp: PostInIp,
+            PostTime: PostTime.toISOString().split('.')[0] + "Z"
+        }),
+    })
+        .then(respuesta => {
+            if (!respuesta.ok) {
+                return respuesta.json().then(errorDetails => {
+                    // Aquí logueas el código de error y el mensaje para diagnosticar el problema
+                    console.log("Código de error:", errorDetails.codigoError);
+                    console.log("Mensaje de error:", errorDetails.message);
+                    throw new Error(`Error: ${errorDetails.message} - Código de error: ${errorDetails.codigoError}`);
+                });
+            }
+            return respuesta.json();
+        })
+        .catch((error) => {
+            // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
+            console.error("Error al intentar registrar el evento:", error);
         });
 }
 

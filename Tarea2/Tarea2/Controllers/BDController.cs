@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Tarea2.Modelos;
 
@@ -30,6 +31,95 @@ namespace Tarea2.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, new { message = "Error en servidor", exception = ex.Message });
+            }
+        }
+
+
+        [HttpPost("ContarLoginsFallidos")]
+        public ActionResult<LoginFallidosResponse> ContarLoginsFallidos([FromBody] LoginReq request)
+        {
+            try
+            {
+                int conteo = 0;
+                int fueUsuario = 0;
+                int codigoError = 0;
+
+                int result = AccesarBD.ContarLoginsFallidos(
+                    request.Username,
+                    request.Password,
+                    request.IPAddress,
+                    out conteo,
+                    out fueUsuario,
+                    out codigoError
+                );
+
+                if (codigoError == 0) // Todo está bien
+                {
+                    return Ok(new LoginFallidosResponse
+                    {
+                        Conteo = conteo,
+                        FueUsuario = fueUsuario,
+                        CodigoError = codigoError
+                    });
+                }
+                else
+                {
+                    return BadRequest(new
+                    {
+                        message = "Error al contar logins fallidos",
+                        codigoError = codigoError
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Error en servidor",
+                    exception = ex.Message
+                });
+            }
+        }
+
+
+        [HttpPost("VerificarDeshabilitado")]
+        public ActionResult<VerificacionDeshabilitadoResponse> VerificarDeshabilitado([FromBody] VerificacionDeshabilitadoRequest request)
+        {
+            try
+            {
+                bool deshabilitado = false;
+                int codigoError = 0;
+
+                int result = AccesarBD.VerificarDeshabilitado(
+                    request.Username,
+                    out deshabilitado,
+                    out codigoError
+                );
+
+                if (codigoError == 0) // Todo está bien
+                {
+                    return Ok(new VerificacionDeshabilitadoResponse
+                    {
+                        Deshabilitado = deshabilitado,
+                        CodigoError = codigoError
+                    });
+                }
+                else
+                {
+                    return BadRequest(new
+                    {
+                        message = "Error al verificar estado de usuario",
+                        codigoError = codigoError
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Error en servidor",
+                    exception = ex.Message
+                });
             }
         }
 
@@ -110,6 +200,25 @@ namespace Tarea2.Controllers
                 if (empleados.Count == 0) //No hay empleados en la tabla
                 {
                         return Ok(new { message = "La tabla está vacía", empleados = new List<Empleado>() });
+                }
+                return Ok(empleados);//El stored procedure devuelve la lista de empleados
+            }
+            catch
+            {
+                Console.WriteLine("No se muestra la tabla");
+                return (null);
+            }
+        }
+        [AllowAnonymous]
+        [HttpGet("MostrarMovimientosControlador")]
+        public ActionResult<List<Movimientos>> MostrarMovimientos()
+        {
+            try
+            {
+                var empleados = AccesarBD.MostrarEmpleados();
+                if (empleados.Count == 0) //No hay empleados en la tabla
+                {
+                    return Ok(new { message = "La tabla está vacía", empleados = new List<Movimientos>() });
                 }
                 return Ok(empleados);//El stored procedure devuelve la lista de empleados
             }

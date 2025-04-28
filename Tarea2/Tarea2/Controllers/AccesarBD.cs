@@ -57,6 +57,144 @@ public class AccesarBD
     }
 
 
+    public static int ContarLoginsFallidos(
+    string username,
+    string password,
+    string ipAddress,
+    out int outConteo,
+    out int outFueUsuario,
+    out int outCodigoError)
+    {
+        // String de conexión a BD
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        // Inicializar parámetros de salida
+        outConteo = 0;
+        outFueUsuario = 0;
+        outCodigoError = 0;
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand("ContarLoginsFallidos", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Parámetros de entrada
+                    cmd.Parameters.Add("@inUsername", SqlDbType.VarChar, 128).Value = username;
+                    cmd.Parameters.Add("@inPassword", SqlDbType.VarChar, 128).Value = password;
+                    cmd.Parameters.Add("@inIPAddress", SqlDbType.VarChar, 32).Value = ipAddress;
+
+                    // Parámetros de salida
+                    SqlParameter paramConteo = new SqlParameter("@outConteo", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(paramConteo);
+
+                    SqlParameter paramFueUsuario = new SqlParameter("@outFueUsuario", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(paramFueUsuario);
+
+                    SqlParameter paramCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(paramCodigoError);
+
+                    // Ejecutar SP
+                    cmd.ExecuteNonQuery();
+
+                    // Obtener valores de salida
+                    outConteo = (int)paramConteo.Value;
+                    outFueUsuario = (int)paramFueUsuario.Value;
+                    outCodigoError = (int)paramCodigoError.Value;
+
+                    return outCodigoError;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al contar logins fallidos: {ex.Message}");
+            Console.WriteLine($"Detalles: {ex.StackTrace}");
+            outCodigoError = 50005;
+            return outCodigoError;
+        }
+    }
+
+
+
+    public static int VerificarDeshabilitado(
+    string username,
+    out bool outDeshabilitado,
+    out int outCodigoError)
+    {
+        // String de conexión a BD
+        string StringConexion = "Server=25.55.61.33;" +
+            "Database=Tarea2;" +
+            "Trusted_Connection=True;" +
+            "TrustServerCertificate=True;";
+
+        // Inicializar parámetros de salida
+        outDeshabilitado = false;
+        outCodigoError = 0;
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(StringConexion))
+            {
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand("VerificarDeshabilitado", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Parámetros de entrada
+                    cmd.Parameters.Add("@inUserName", SqlDbType.VarChar, 128).Value = username;
+
+                    // Parámetros de salida
+                    SqlParameter paramDeshabilitado = new SqlParameter("@outDeshabilitado", SqlDbType.Bit)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(paramDeshabilitado);
+
+                    SqlParameter paramCodigoError = new SqlParameter("@outCodigoError", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(paramCodigoError);
+
+                    // Ejecutar SP
+                    cmd.ExecuteNonQuery();
+
+                    // Obtener valores de salida
+                    outDeshabilitado = (bool)paramDeshabilitado.Value;
+                    outCodigoError = (int)paramCodigoError.Value;
+
+                    return outCodigoError;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al verificar estado deshabilitado: {ex.Message}");
+            Console.WriteLine($"Detalles: {ex.StackTrace}");
+            outCodigoError = 50005;
+            return outCodigoError;
+        }
+    }
+
+
     public static int InsertarBitacora(int idTipoEvento, string Descripcion, int idPostByUser, string PostInIp, DateTime PostTime)
     {
         //String de conexión a BD
@@ -78,7 +216,7 @@ public class AccesarBD
 
                     //Envia parámetros de entrada
                     insertar.Parameters.Add("@inIdTipoEvento", SqlDbType.Int).Value = idTipoEvento;
-                    insertar.Parameters.Add("@inDescripcion", SqlDbType.VarChar).Value = Descripcion;
+                    insertar.Parameters.Add("@inDescripcion", SqlDbType.VarChar, 300).Value = Descripcion;
                     insertar.Parameters.Add("@inIdPostByUser", SqlDbType.Int).Value = idPostByUser;
                     insertar.Parameters.Add("@inPostInIp", SqlDbType.VarChar, 32).Value = PostInIp;
                     insertar.Parameters.Add("@inPostTime", SqlDbType.DateTime).Value = PostTime;
