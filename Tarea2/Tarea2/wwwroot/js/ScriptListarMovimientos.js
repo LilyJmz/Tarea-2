@@ -71,29 +71,33 @@ function listarMovimiento() {
                     const tdFecha = document.createElement("td");
                     tdFecha.textContent = new Date(movimiento.fecha).toLocaleDateString();
                     trInicio.appendChild(tdFecha);
-
-                    // Tipo de movimiento (asumiendo que necesitas mapear el ID a un nombre)
                     const tdTipo = document.createElement("td");
-                    if (movimiento.idTipoMovimiento.Equals("1")) {
-                        tdTipo.textContent = "Cumplir mes"; 
-                    }
-                    else if (movimiento.idTipoMovimiento.Equals("2")) {
-                        tdTipo.textContent = "Bono vacacional"; 
-                    }
-                    else if (movimiento.idTipoMovimiento.Equals("3")) {
-                        tdTipo.textContent = "Reversion Debito";
-                    }
-                    else if (movimiento.idTipoMovimiento.Equals("4")) {
-                        tdTipo.textContent = "Disfrute de vacaciones"; 
-                    }
-                    else if (movimiento.idTipoMovimiento.Equals("5")) {
-                        tdTipo.textContent = "Venta de vacaciones"; 
-                    }
-                    else if (movimiento.idTipoMovimiento.Equals("6")) {
-                        tdTipo.textContent = "Reversion de Credito"; 
+                    const tipo = parseInt(String(movimiento.idTipoMovimiento).trim(), 10); // Asegura que sea string, limpia y convierte a número
+
+                    switch (tipo) {
+                        case 1:
+                            tdTipo.textContent = "Cumplir mes";
+                            break;
+                        case 2:
+                            tdTipo.textContent = "Bono vacacional";
+                            break;
+                        case 3:
+                            tdTipo.textContent = "Reversion Debito";
+                            break;
+                        case 4:
+                            tdTipo.textContent = "Disfrute de vacaciones";
+                            break;
+                        case 5:
+                            tdTipo.textContent = "Venta de vacaciones";
+                            break;
+                        case 6:
+                            tdTipo.textContent = "Reversion de Credito";
+                            break;
+                        default:
+                            tdTipo.textContent = `Tipo no reconocido (${tipo})`; // Maneja casos no definidos
+                            console.warn("Tipo de movimiento no reconocido:", tipo); // Depuración
                     }
                     trInicio.appendChild(tdTipo);
-
                     // Monto
                     const tdMonto = document.createElement("td");
                     tdMonto.textContent = movimiento.monto;
@@ -106,7 +110,28 @@ function listarMovimiento() {
 
                     // Usuario que registró
                     const tdUsuario = document.createElement("td");
-                    tdUsuario.textContent = movimiento.idPostByUser;
+                    switch (movimiento.idPostByUser) {
+                        case 1:
+                            tdUsuario.textContent = "UsuarioScripts";
+                            break;
+                        case 2:
+                            tdUsuario.textContent = "Arturo";
+                            break;
+                        case 3:
+                            tdUsuario.textContent = "Alejandro";
+                            break;
+                        case 4:
+                            tdUsuario.textContent = "Franco";
+                            break;
+                        case 5:
+                            tdUsuario.textContent = "Daniel";
+                            break;
+                        case 6:
+                            tdUsuario.textContent = "Alex";
+                            break;
+                        default:
+                            tdUsuario.textContent = "Tipo desconocido";
+                    }
                     trInicio.appendChild(tdUsuario);
 
                     // IP

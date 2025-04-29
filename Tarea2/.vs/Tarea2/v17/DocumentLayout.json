@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptlistarmovimientos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptlistarmovimientos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptinsertarempleado.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptinsertarempleado.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptinsertarmovimiento.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptinsertarmovimiento.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -19,16 +27,8 @@
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\modelos\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptlistarmovimientos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptlistarmovimientos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\modelos\\tipomovimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\modelos\\tipomovimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\js\\scriptinsertarempleado.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|solutionrelative:tarea2\\wwwroot\\js\\scriptinsertarempleado.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA858DDD-2289-4803-9830-B3AE901D5721}|Tarea2\\Tarea2.csproj|c:\\users\\hp\\onedrive\\documentos\\github\\tarea-2\\tarea2\\tarea2\\wwwroot\\listarmovimientos.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -99,45 +99,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AccesarBD.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
-              "RelativeDocumentMoniker": "Tarea2\\Controllers\\AccesarBD.cs",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
-              "RelativeToolTip": "Tarea2\\Controllers\\AccesarBD.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAewGsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T01:56:45.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BDController.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
-              "RelativeDocumentMoniker": "Tarea2\\Controllers\\BDController.cs",
-              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
-              "RelativeToolTip": "Tarea2\\Controllers\\BDController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAWwEcAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T01:53:48.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "ScriptInsertarMovimiento.js",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
               "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
               "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptInsertarMovimiento.js",
-              "ViewState": "AgIAAE0AAAAAAAAAAADwv2MAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAqwGMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-28T23:04:54.33Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Movimiento.cs",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Modelos\\Movimiento.cs",
               "RelativeDocumentMoniker": "Tarea2\\Modelos\\Movimiento.cs",
@@ -150,20 +124,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "ScriptListarMovimientos.js",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptListarMovimientos.js",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptListarMovimientos.js",
               "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptListarMovimientos.js",
               "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptListarMovimientos.js",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAQwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAQwHAAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-28T02:48:28.331Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TipoMovimiento.cs",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Modelos\\TipoMovimiento.cs",
               "RelativeDocumentMoniker": "Tarea2\\Modelos\\TipoMovimiento.cs",
@@ -176,15 +150,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "ScriptInsertarEmpleado.js",
               "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarEmpleado.js",
               "RelativeDocumentMoniker": "Tarea2\\wwwroot\\js\\ScriptInsertarEmpleado.js",
               "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\wwwroot\\js\\ScriptInsertarEmpleado.js",
               "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptInsertarEmpleado.js",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAAAHQAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-28T23:35:11.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BDController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
+              "RelativeDocumentMoniker": "Tarea2\\Controllers\\BDController.cs",
+              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\BDController.cs",
+              "RelativeToolTip": "Tarea2\\Controllers\\BDController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAWwEcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T01:53:48.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccesarBD.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
+              "RelativeDocumentMoniker": "Tarea2\\Controllers\\AccesarBD.cs",
+              "ToolTip": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\Tarea-2\\Tarea2\\Tarea2\\Controllers\\AccesarBD.cs",
+              "RelativeToolTip": "Tarea2\\Controllers\\AccesarBD.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAewGsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T01:56:45.357Z",
               "EditorCaption": ""
             },
             {
@@ -348,7 +348,8 @@
               "RelativeToolTip": "Tarea2\\wwwroot\\js\\ScriptActualizarEmpleado.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-28T00:54:15.57Z"
+              "WhenOpened": "2025-04-28T00:54:15.57Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
