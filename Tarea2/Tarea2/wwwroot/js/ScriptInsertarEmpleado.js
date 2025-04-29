@@ -102,6 +102,8 @@ const insertarEmpleado = (puesto, docId, nombre, fechaContratacion, saldoVacacio
             insertarBitacora(5, `Empleado con ValorDocumentoIdentidad ya existe en inserción ${puesto} ${docId.trim()}  ${nombre}`, parseInt(usuario.id), "25.55.61.33", new Date())
             insertarBitacora(5, `Empleado con mismo nombre ya existe en inserción ${puesto} ${docId.trim()}  ${nombre}`, parseInt(usuario.id), "25.55.61.33", new Date())
             alert("Ya existe un empleado con este documento de identidad o nombre");
+            //await manejarError(50004);
+            //await manejarError(50005);
              });
 }
 
@@ -169,4 +171,48 @@ const insertarBitacora = (idTipoEvento, Descripcion, idPostByUser, PostInIp, Pos
             console.error("Error al intentar registrar el evento:", error);
         });
 }
+
+const manejarError = async (codigoError) => {
+    try {
+        const response = await fetch('https://localhost:5001/api/BDController/ManejarError', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                CodigoError: codigoError
+            }),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Error al manejar error:", errorData.message);
+            alert("Ocurrió un error al procesar el código de error");
+            return {
+                descripcion: "Error desconocido",
+                codigoError: 50005
+            };
+        }
+
+        const data = await response.json();
+
+        // Mostrar la descripción 
+        if (data.descripcion) {
+            alert(data.descripcion);
+        }
+
+        return {
+            descripcion: data.descripcion,
+            codigoError: data.codigoError || 0
+        };
+
+    } catch (error) {
+        console.error("Error en la solicitud:", error);
+        alert("Error de conexión al intentar manejar el error");
+        return {
+            descripcion: "Error de conexión",
+            codigoError: 50005
+        };
+    }
+};
 

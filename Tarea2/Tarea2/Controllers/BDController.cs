@@ -33,25 +33,45 @@ namespace Tarea2.Controllers
                 return StatusCode(500, new { message = "Error en servidor", exception = ex.Message });
             }
         }
-
-        [HttpPost("InsertarMovimientosControlador")]
-        public ActionResult<int> InsertarMovimiento([FromBody] Movimiento movimiento)
+        [HttpPost("InsertarMovimiento")]
+        public async Task<ActionResult<int>> InsertarMovimiento([FromBody] Movimiento movimiento)
         {
             try
             {
-                int result = AccesarBD.InsertarMovimiento(movimiento.idEmpleado, movimiento.idTipoMovimiento, movimiento.fecha, movimiento.monto, movimiento.nuevoSaldo, movimiento.idPostByUser, movimiento.postInIp, movimiento.postTime);
-                if (result == 0) // El stored procedure devuelve 0 todo está bien
-                {
+                // Validación manual para campos requeridos
+                if (movimiento.IdEmpleado <= 0 || movimiento.IdTipoMovimiento <= 0)
+                    return BadRequest("IDs deben ser mayores a 0");
+
+                if (movimiento.Monto <= 0)
+                    return BadRequest("El monto debe ser positivo");
+
+                int result = await AccesarBD.InsertarMovimiento(
+                    movimiento.IdEmpleado,
+                    movimiento.IdTipoMovimiento,
+                    movimiento.Fecha,
+                    movimiento.Monto,
+                    movimiento.NuevoSaldo,
+                    movimiento.IdPostByUser,
+                    movimiento.PostInIp,
+                    movimiento.PostTime
+                );
+
+                if (result == 0)
                     return Ok(result);
-                }
                 else
-                {
-                    return BadRequest(new { message = "Error al insertar movimiento", codigoError = result });
-                }
+                    return BadRequest(new
+                    {
+                        message = "Error en validación de datos",
+                        codigoError = result
+                    });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Error en servidor", exception = ex.Message });
+                return StatusCode(500, new
+                {
+                    message = "Error interno del servidor",
+                    details = ex.Message
+                });
             }
         }
 
@@ -223,25 +243,35 @@ namespace Tarea2.Controllers
         }
 
         [AllowAnonymous]
-        //Un controller de tipo GET para recibir la información de la lista de movimientos
-        [HttpGet("MostrarMovimientosControlador")]
-        public ActionResult<List<Movimiento>> MostrarMovimientos()
+        [HttpPost("MostrarMovimientosControlador")]
+        public ActionResult<List<Movimiento>> MostrarMovimientos([FromBody] MovimientoRequest request)
         {
             try
             {
-                var movimientos = AccesarBD.MostrarMovimientos();
-                if (movimientos.Count == 0) //No hay empleados en la tabla
+                var movimientos = AccesarBD.MostrarMovimientos(request.IdEmpleado);
+
+                if (movimientos == null || movimientos.Count == 0)
                 {
-                    return Ok(new { message = "La tabla está vacía", empleados = new List<Movimiento>() });
+                    return Ok(new
+                    {
+                        message = "No se encontraron movimientos para este empleado",
+                        data = new List<Movimiento>()
+                    });
                 }
-                return Ok(movimientos);//El stored procedure devuelve la lista de empleados
+
+                return Ok(movimientos);
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine("No se muestra la tabla");
-                return (null);
+                Console.WriteLine("Error al mostrar movimientos: " + ex.Message);
+                return StatusCode(500, new
+                {
+                    message = "Error interno al obtener movimientos",
+                    error = ex.Message
+                });
             }
         }
+
 
         [AllowAnonymous]
         [HttpGet("CargarControlador")]
@@ -283,6 +313,47 @@ namespace Tarea2.Controllers
             {
                 Console.WriteLine("No se muestra la tabla: " + ex.Message);
                 return StatusCode(500, "Error interno");
+            }
+        }
+
+        [HttpPost("ManejarError")]
+        public ActionResult<ManejoErrorResponse> ManejarError([FromBody] ManejoErrorRequest request)
+        {
+            try
+            {
+                string descripcion = string.Empty;
+                int codigoErrorSalida = 0;
+
+                int result = AccesarBD.ManejarError(
+                    request.CodigoError,
+                    out descripcion,
+                    out codigoErrorSalida
+                );
+
+                if (codigoErrorSalida == 0) // Todo está bien
+                {
+                    return Ok(new ManejoErrorResponse
+                    {
+                        Descripcion = descripcion,
+                        CodigoError = codigoErrorSalida
+                    });
+                }
+                else
+                {
+                    return BadRequest(new
+                    {
+                        message = "Error al manejar el código de error",
+                        codigoError = codigoErrorSalida
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Error en servidor",
+                    exception = ex.Message
+                });
             }
         }
 
@@ -333,21 +404,23 @@ namespace Tarea2.Controllers
         [AllowAnonymous]
         //Un controller de tipo GET para recibir la información de la lista de empleados
         [HttpGet("MostrarTiposMovimientosControlador")]
-        public ActionResult<List<TipoMovimiento>> MostrarTiposMovimientos()
+        public ActionResult<IEnumerable<TipoMovimiento>> MostrarTiposMovimientos()
         {
             try
             {
-                var tipoMovimiento = AccesarBD.MostrarTiposMovimientos();
-                if (tipoMovimiento.Count == 0) //No hay empleados en la tabla
+                int codigoError;
+                var tipos = AccesarBD.MostrarTiposMovimientos(out codigoError);
+
+                if (codigoError != 0)
                 {
-                    return Ok(new { message = "La tabla está vacía", empleados = new List<TipoMovimiento>() });
+                    return StatusCode(500, new { error = "Error al obtener tipos" });
                 }
-                return Ok(tipoMovimiento);//El stored procedure devuelve la lista de empleados
+
+                return Ok(tipos); // Devuelve directamente el array
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine("No se muestra la tabla");
-                return (null);
+                return StatusCode(500, new { error = ex.Message });
             }
         }
 

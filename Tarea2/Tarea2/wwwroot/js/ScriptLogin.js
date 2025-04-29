@@ -60,7 +60,8 @@ async function mostrarUsuario(username, password) {
             const resultado = await verificarDeshabilitado(usuarioEncontrado.username);
             if (resultado.deshabilitado) {
                 console.log("El usuario está temporalmente deshabilitado");
-                alert("Tu cuenta está temporalmente deshabilitada por demasiados intentos fallidos. Intenta nuevamente más tarde.");
+                await manejarError(50003);
+                document.getElementById('hacerLogin').disabled = false;
             } else {
                 await insertarBitacora(1, "", parseInt(usuarioEncontrado.id), "25.55.61.33", new Date());
                 alert("¡Login exitoso! Bienvenido " + usuarioEncontrado.username);
@@ -71,10 +72,10 @@ async function mostrarUsuario(username, password) {
             // Login fallido
             if (usuarioEncontrado) {
                 await insertarBitacora(2, `Intento ${cuenta} en los últimos 30 minutos, código de error 50002`, usuarioEncontrado.id, "25.55.61.33", new Date());
-                alert("Contraseña incorrecta.");
+                await manejarError(50002);
             } else {
                 await insertarBitacora(2, `Intento fallido en los últimos 30 minutos, código de error 50001`, 7, "25.55.61.33", new Date());
-                alert("Usuario incorrecto.");
+                await manejarError(50001);
             }
             document.getElementById('hacerLogin').disabled = false;
         }
@@ -198,6 +199,50 @@ const verificarDeshabilitado = async (username) => {
         return {
             deshabilitado: false,
             error: error.message
+        };
+    }
+};
+
+const manejarError = async (codigoError) => {
+    try {
+        const response = await fetch('https://localhost:5001/api/BDController/ManejarError', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                CodigoError: codigoError
+            }),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Error al manejar error:", errorData.message);
+            alert("Ocurrió un error al procesar el código de error");
+            return {
+                descripcion: "Error desconocido",
+                codigoError: 50005
+            };
+        }
+
+        const data = await response.json();
+
+        // Mostrar la descripción 
+        if (data.descripcion) {
+            alert(data.descripcion);
+        }
+
+        return {
+            descripcion: data.descripcion,
+            codigoError: data.codigoError || 0
+        };
+
+    } catch (error) {
+        console.error("Error en la solicitud:", error);
+        alert("Error de conexión al intentar manejar el error");
+        return {
+            descripcion: "Error de conexión",
+            codigoError: 50005
         };
     }
 };

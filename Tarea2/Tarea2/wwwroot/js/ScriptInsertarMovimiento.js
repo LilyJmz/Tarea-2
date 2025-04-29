@@ -1,141 +1,167 @@
-﻿
-var empleado = JSON.parse(localStorage.getItem('empleado'));
-console.log('empleado: ', empleado);
-var usuario = JSON.parse(localStorage.getItem('usuario'));
-console.log('usuario: ', usuario);
-let NombreMovimiento;
+﻿const empleado = JSON.parse(localStorage.getItem('empleado'));
+const usuario = JSON.parse(localStorage.getItem('usuario'));
+let tiposMovimiento = [];
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    document.getElementById("idEmpleado").innerHTML = empleado.id;
-    document.getElementById("nombre").innerHTML = empleado.nombre;
-    document.getElementById("saldoVacaciones").innerHTML = empleado.saldoVacaciones;
-
-    mostrarMovimientos();
-    console.log("Script.js se ha cargado correctamente");
-});
-
-//Si le da a botón insertar revisa el contenido de los cuadros de texto
-document.addEventListener('DOMContentLoaded', function () {
-    try {
-        const button = document.getElementById('accionInsertarMovimiento');
-        button.addEventListener('click', function () {
-            document.getElementById('accionInsertarMovimiento').disabled = true;
-            document.getElementById('regresarInsertarMovVista').disabled = true;
-            var movimiento = document.getElementById('movimiento').value.trim();
-            const monto = document.getElementById('monto').value.trim();
-
-            const montoRegex = /^\d+(\.\d{1,2})?$/;
-
-            if (monto === "") {
-                alert("No puede dejar su monto vacío");
-            } else if (!nameRegex.test(nombre)) {
-                alert("No puede ingresar caracteres especiales en su monto");
-
-            } else if (movimiento === "") {
-                alert("Debe ingresar un puesto");
-            } else {
-                const fechaMovimiento = new Date().toISOString().split('T')[0];
-                const tiempoMovimiento = new Date().toTimeString();
-
-                insertarMovimiento(empleado.nombre, movimiento.id, fechaMovimiento, monto, empleado.saldoVacaciones, usuario.username, "25.55.61.33", tiempoMovimiento);
-                document.getElementById('accionInsertarMovimiento').disabled = false;
-                document.getElementById('regresarInsertarMovVista').disabled = false;
-
+    if (empleado) {
+        function mostrarDato(id, valor, etiqueta) {
+            const elemento = document.getElementById(id);
+            if (elemento) {
+                elemento.innerHTML = `
+                <div class="dato-empleado">
+                    <span class="etiqueta">${etiqueta}:</span>
+                    <span class="valor">${valor}</span>
+                </div>
+            `;
             }
-        });
+        }
+
+        // Mostrar los tres datos
+        mostrarDato("idEmpleado", empleado.id, "ID Empleado");
+        mostrarDato("nombre", empleado.nombre, "Nombre");
+        mostrarDato("saldoVacaciones", empleado.saldoVacaciones + " días", "Saldo Vacaciones");
     }
-    catch {
-        return (null);
-    }
+    mostrarTiposMovimiento();
+    setupButtons();
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    try {
-        const button = document.getElementById('regresarInsertarMovVista');
-        button.addEventListener('click', function () {
+function setupButtons() {
+    const insertBtn = document.getElementById('accionInsertarMovimiento');
+    if (insertBtn) {
+        insertBtn.addEventListener('click', validarYInsertarMovimiento);
+    }
+
+    const backBtn = document.getElementById('regresarInsertarMovVista');
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
             window.location.href = 'VistaUsuario.html';
         });
     }
-    catch {
-        return (null);
+}
+
+function validarYInsertarMovimiento() {
+    const movimientoSelect = document.getElementById('movimiento');
+    const montoInput = document.getElementById('monto');
+    const tipoSeleccionado = movimientoSelect.value;
+
+    // Validaciones básicas
+    if (!tipoSeleccionado) {
+        alert("Debe seleccionar un tipo de movimiento");
+        return;
     }
-});
 
+    const monto = parseFloat(montoInput.value);
+    if (isNaN(monto) || monto <= 0) {
+        alert("Ingrese un monto válido (número mayor que 0)");
+        return;
+    }
 
-const insertarMovimiento = (empleadoId, idMovimiento, fechaMovimiento, monto, nuevoSaldo, usuario, ip, hora) => {
+    // Obtener tipo de movimiento seleccionado
+    const tipoMov = tiposMovimiento.find(t => t.id == tipoSeleccionado);
+    if (!tipoMov) {
+        alert("Tipo de movimiento no válido");
+        return;
+    }
+
+    // Calcular nuevo saldo según el tipo de acción (booleano)
+    let nuevoSaldo = empleado.saldoVacaciones;
+    if (tipoMov.tipoAccion === true) { // SUMA
+        nuevoSaldo += monto;
+    } else if (tipoMov.tipoAccion === false) { // RESTA
+        nuevoSaldo -= monto;
+
+        // Validar que el saldo no sea negativo
+        if (nuevoSaldo < 0) {
+            alert("No hay suficiente saldo disponible para este movimiento");
+            return;
+        }
+    } else {
+        alert("Tipo de acción no definido correctamente");
+        return;
+    }
+
+    document.getElementById('accionInsertarMovimiento').disabled = true;
+    document.getElementById('regresarInsertarMovVista').disabled = true;
+
+    const now = new Date();
+
+    const movimientoData = {
+        IdEmpleado: empleado.id,
+        IdTipoMovimiento: tipoMov.id,
+        Fecha: now.toISOString().split('T')[0], // Formato YYYY-MM-DD
+        Monto: monto,
+        NuevoSaldo: nuevoSaldo,
+        IdPostByUser: usuario.id,
+        PostInIp: "25.55.61.33",
+        PostTime: now.toISOString() // DateTime completo
+    };
+
+    insertarMovimiento(movimientoData, tipoMov.nombre);
+}
+
+function insertarMovimiento(movimientoData, nombreMovimiento) {
     fetch('https://localhost:5001/api/BDController/InsertarMovimiento', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            IdEmpleado: empleadoId,
-            IdTipoMovimiento: idMovimiento,
-            Fecha: fechaMovimiento,
-            Monto: monto,
-            NuevoSaldo: nuevoSaldo,
-            IdPostByUser: usuario,
-            PostInIP: ip,
-            PostTime: hora
-        }),
+        body: JSON.stringify(movimientoData) // Enviamos el objeto directamente
     })
-        .then(respuesta => {
+        .then(async respuesta => {
             if (!respuesta.ok) {
-                return respuesta.json().then(errorDetails => {
-                    // Aquí logueas el código de error y el mensaje para diagnosticar el problema
-                    console.log("Código de error:", errorDetails.codigoError);
-                    console.log("Mensaje de error:", errorDetails.message);
-                    throw new Error(`Error: ${errorDetails.message} - Código de error: ${errorDetails.codigoError}`);
-                });
+                const errorData = await respuesta.json();
+                throw new Error(errorData.message || "Error al insertar movimiento");
             }
             return respuesta.json();
         })
-        .then(datos => {
-            insertarBitacora(14, `${empleado.docId} ${empleado.nombre}  ${nuevoSaldo} ${NombreMovimiento} ${monto}`, parseInt(usuario.id), "25.55.61.33", new Date())
+        .then(data => {
+            empleado.saldoVacaciones = movimientoData.NuevoSaldo;
+            document.getElementById("saldoVacaciones").textContent = movimientoData.NuevoSaldo + " días";
+
+            insertarBitacora(14, `${empleado.id} ${empleado.nombre} ${movimientoData.NuevoSaldo} ${nombreMovimiento} ${movimientoData.Monto}`,
+                usuario.id, "25.55.61.33", new Date());
+
             alert("Movimiento insertado exitosamente");
-        })
-        .catch((error) => {
-            insertarBitacora(13, `Intento de insertar movimiento ${empleado.docId} ${empleado.nombre}  ${nuevoSaldo} ${NombreMovimiento} ${monto}`, parseInt(usuario.id), "25.55.61.33", new Date())
-            // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
-            console.error("Error al intentar registrar el movimiento:", error);
-        });
-}
-
-
-function mostrarMovimientos() {
-    fetch('https://localhost:5001/api/BDController/MostrarTiposMovimientosControlador')
-        .then(respuesta => {
-            if (!respuesta.ok) {
-                throw new Error('Error en la solicitud de movientos: ' + respuesta.statusText);
-            }
-            return respuesta.json();
-        })
-        .then(datos => {
-            const select = document.getElementById("movimiento");
-            select.innerHTML = "";  // Clear existing options
-            console.log(datos);
-
-            if (datos.length === 0) {
-                const opcion = document.createElement("option");
-                opcion.textContent = "No hay movimientos disponibles";
-                opcion.disabled = true;
-                opcion.selected = true;
-                select.appendChild(opcion);
-            } else {
-                datos.forEach(movimiento => {
-                    const opcion = document.createElement("option");
-                    opcion.value = movimiento;
-                    opcion.textContent = movimiento.nombre;
-                    NombreMovimiento = movimiento.nombre;
-                    select.appendChild(opcion);
-                });
-            }
+            document.getElementById('monto').value = '';
         })
         .catch(error => {
-            console.log("Error al mostrar la lista de movimiento:", error);
+            console.error("Error:", error);
+            insertarBitacora(13, `Intento de insertar movimiento ${empleado.id} ${empleado.nombre} ${movimientoData.NuevoSaldo} ${nombreMovimiento} ${movimientoData.Monto}`,
+                usuario.id, "25.55.61.33", new Date());
+            alert("Error al insertar movimiento: " + error.message);
+        })
+        .finally(() => {
+            document.getElementById('accionInsertarMovimiento').disabled = false;
+            document.getElementById('regresarInsertarMovVista').disabled = false;
         });
 }
+
+function mostrarTiposMovimiento() {
+    fetch('https://localhost:5001/api/BDController/MostrarTiposMovimientosControlador')
+        .then(response => {
+            if (!response.ok) throw new Error('Error al cargar tipos');
+            return response.json();
+        })
+        .then(data => {
+            tiposMovimiento = data;
+            const select = document.getElementById("movimiento");
+            select.innerHTML = '<option value="" selected disabled>Seleccione...</option>';
+
+            data.forEach(tipo => {
+                const option = document.createElement("option");
+                option.value = tipo.id; // Usar id como valor
+                option.textContent = tipo.nombre;
+                // Opcional: mostrar icono según tipoAccion
+                option.textContent += tipo.tipoAccion ? " (+) " : " (-) ";
+                select.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Error al cargar tipos de movimiento");
+        });
+}
+
 const insertarBitacora = (idTipoEvento, Descripcion, idPostByUser, PostInIp, PostTime) => {
     fetch('https://localhost:5001/api/BDController/InsertarBitacora', {
         method: 'POST',
@@ -150,20 +176,50 @@ const insertarBitacora = (idTipoEvento, Descripcion, idPostByUser, PostInIp, Pos
             PostTime: PostTime.toISOString().split('.')[0] + "Z"
         }),
     })
-        .then(respuesta => {
-            if (!respuesta.ok) {
-                return respuesta.json().then(errorDetails => {
-                    // Aquí logueas el código de error y el mensaje para diagnosticar el problema
-                    console.log("Código de error:", errorDetails.codigoError);
-                    console.log("Mensaje de error:", errorDetails.message);
-                    throw new Error(`Error: ${errorDetails.message} - Código de error: ${errorDetails.codigoError}`);
-                });
-            }
-            return respuesta.json();
-        })
-        .catch((error) => {
-            // Este bloque captura y muestra cualquier error que ocurra durante la solicitud
-            console.error("Error al intentar registrar el evento:", error);
+        .catch(error => console.error("Error al registrar en bitácora:", error));
+};
+
+const manejarError = async (codigoError) => {
+    try {
+        const response = await fetch('https://localhost:5001/api/BDController/ManejarError', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                CodigoError: codigoError
+            }),
         });
-}
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Error al manejar error:", errorData.message);
+            alert("Ocurrió un error al procesar el código de error");
+            return {
+                descripcion: "Error desconocido",
+                codigoError: 50005
+            };
+        }
+
+        const data = await response.json();
+
+        // Mostrar la descripción 
+        if (data.descripcion) {
+            alert(data.descripcion);
+        }
+
+        return {
+            descripcion: data.descripcion,
+            codigoError: data.codigoError || 0
+        };
+
+    } catch (error) {
+        console.error("Error en la solicitud:", error);
+        alert("Error de conexión al intentar manejar el error");
+        return {
+            descripcion: "Error de conexión",
+            codigoError: 50005
+        };
+    }
+};
 

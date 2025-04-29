@@ -4,20 +4,18 @@ namespace Tarea2.Modelos
     {
         public int id { get; set; }
         public string nombre { get; set; }
-        
-        public string tipoAccion  { get; set; }
-
-
+        public bool tipoAccion { get; set; } // true = suma, false = resta
 
         public TipoMovimiento()
         {
         }
 
-        public TipoMovimiento(int id, string nombre, string tipoAccion)
+        public TipoMovimiento(int id, string nombre, bool tipoAccion)
         {
             this.id = id;
             this.nombre = nombre;
             this.tipoAccion = tipoAccion;
-        }}
+        }
     }
+
 }
