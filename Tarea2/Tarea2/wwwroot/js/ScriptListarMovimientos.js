@@ -166,13 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-document.getElementById("irInsertarMovimiento").addEventListener("click", () => {
-    if (empleado) {
-        localStorage.setItem('empleado', empleado);
-        localStorage.setItem('usuario', usuario);
-        window.location.href = 'InsertarMovimiento.html';
-    }
-});
+
 
 
 
